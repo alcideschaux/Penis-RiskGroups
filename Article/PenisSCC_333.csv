@@ -1,0 +1,334 @@
+ID,Procedure,Grade,Subtype,Glans,Sulcus,Foreskin,Level,Thickness,Size,Age,Lymphadenectomy,Mets,Urethra,Vascular,Perineural,pT,Relapse,Local,Regional,Systemic,FollowUp,Outcome,cN
+PSCC-001,Partial penectomy,Grade 1,Mixed,NA,NA,NA,Preputial dartos,7,NA,58,No,No,No,No,No,NA,Yes,Yes,No,No,58.1,Died of other causes,cN0
+PSCC-002,Partial penectomy,Grade 1,Verrucous,Yes,Yes,No,Corpus spongiosum,6,3,52,No,No,NA,No,No,NA,No,NA,NA,NA,347.8,Alive without disease,cN0
+PSCC-003,Total penectomy,Grade 1,Mixed,Yes,No,No,Corpus spongiosum,7,5,58,No,No,NA,No,No,NA,No,NA,NA,NA,154.2,Alive without disease,cN1
+PSCC-004,Total penectomy,Grade 1,Verrucous,Yes,No,No,Lamina propria,3,2.3,62,No,No,NA,No,No,NA,No,NA,NA,NA,48.2,Died of other causes,cN2
+PSCC-005,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,NA,6,76,No,No,NA,No,No,NA,No,NA,NA,NA,37.8,Died of other causes,cN0
+PSCC-006,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,NA,NA,64,No,No,NA,Yes,No,NA,No,NA,NA,NA,47,Died of other causes,cN1
+PSCC-007,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus cavernosum,NA,NA,36,Yes,Yes,NA,Yes,No,NA,Yes,No,No,Yes,8.7,Alive with disease,cN2
+PSCC-008,Total penectomy,Grade 3,Mixed,Yes,No,No,Corpus cavernosum,12,NA,54,Yes,Yes,Yes,Yes,No,T3,No,NA,NA,NA,12.7,Lost at follow-up,cN2
+PSCC-009,Partial penectomy,Grade 2,Papillary,Yes,No,No,Corpus spongiosum,7,NA,72,No,No,NA,No,No,NA,No,NA,NA,NA,67.8,Alive without disease,cN0
+PSCC-010,Total penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,15,NA,55,No,No,NA,Yes,No,NA,No,NA,NA,NA,63,Alive without disease,cN0
+PSCC-011,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,6,NA,33,No,No,No,No,No,T2,No,NA,NA,NA,27.6,Died of other causes,cN0
+PSCC-012,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,10,2,55,Yes,No,No,No,No,T2,No,NA,NA,NA,349.7,Alive without disease,cN0
+PSCC-013,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,5,NA,76,No,No,No,No,No,T2,No,NA,NA,NA,121.7,Died of other causes,cN0
+PSCC-014,Partial penectomy,Grade 3,Warty,Yes,Yes,Yes,Lamina propria,4,NA,36,Yes,No,NA,No,No,NA,No,NA,NA,NA,204,Alive without disease,cN2
+PSCC-015,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,7,NA,57,Yes,No,NA,No,No,NA,No,NA,NA,NA,12.9,Died of other causes,cN0
+PSCC-016,Partial penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,NA,NA,48,No,No,No,NA,NA,T2,Yes,No,Yes,No,197.5,Died of other causes,cN2
+PSCC-017,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,3,NA,54,Yes,Yes,No,No,Yes,T2,No,NA,NA,NA,4.4,Lost at follow-up,cN2
+PSCC-018,Partial penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,6,4.5,61,No,No,Yes,No,No,T3,No,NA,NA,NA,35.7,Died of other causes,cN0
+PSCC-019,Total penectomy,Grade 2,Mixed,Yes,No,No,Corpus cavernosum,7,8,41,Yes,No,No,No,Yes,T2,No,NA,NA,NA,167.4,Alive without disease,cN2
+PSCC-020,Total penectomy,Grade 1,Papillary,Yes,No,No,Corpus spongiosum,7,6,72,Yes,No,NA,No,No,NA,No,NA,NA,NA,323.8,Died of other causes,cN2
+PSCC-021,Total penectomy,Grade 3,Usual,Yes,Yes,No,Corpus cavernosum,8,NA,42,Yes,Yes,No,No,No,T2,No,NA,NA,NA,113.8,Alive without disease,cN2
+PSCC-022,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,8,NA,56,Yes,Yes,Yes,Yes,Yes,T3,NA,NA,NA,NA,3,Died of cancer,cN2
+PSCC-023,Circumcision,Grade 1,Usual,Yes,No,No,Preputial dartos,3,NA,85,No,No,No,No,No,T2,Yes,Yes,No,No,72.6,Died of other causes,cN0
+PSCC-024,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,5,3,81,No,No,Yes,No,No,T3,No,NA,NA,NA,65.1,Alive without disease,NA
+PSCC-025,Partial penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,4,NA,65,No,No,Yes,No,No,T3,No,NA,NA,NA,81.2,Died of other causes,cN0
+PSCC-026,Total penectomy,Grade 3,Usual,Yes,Yes,No,Corpus cavernosum,3,NA,37,Yes,No,No,No,Yes,T2,No,NA,NA,NA,278.3,Alive without disease,cN2
+PSCC-027,Total penectomy,Grade 3,Mixed,Yes,No,No,Corpus cavernosum,12,2,60,Yes,No,Yes,Yes,Yes,T3,No,NA,NA,NA,0.9,Died of cancer,cN2
+PSCC-028,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,5,6,69,No,No,No,No,No,T2,No,NA,NA,NA,218.3,Died of other causes,cN0
+PSCC-029,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,6,1,53,No,No,No,No,No,T2,NA,NA,NA,NA,156.3,Died of cancer,cN0
+PSCC-030,Total penectomy,Grade 1,Usual,Yes,Yes,Yes,Corpus spongiosum,6,3.5,44,Yes,No,NA,No,Yes,NA,No,NA,NA,NA,104.8,Died of other causes,cN2
+PSCC-031,Partial penectomy,Grade 2,Usual,NA,NA,NA,Preputial dartos,6,NA,59,No,No,NA,No,No,NA,No,NA,NA,NA,46.4,Alive without disease,cN0
+PSCC-032,Partial penectomy,Grade 1,Papillary,Yes,No,No,Corpus spongiosum,7,NA,70,No,No,No,No,No,T2,No,NA,NA,NA,28.1,Lost at follow-up,cN0
+PSCC-033,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus spongiosum,6,NA,46,Yes,Yes,NA,No,No,NA,Yes,No,Yes,No,12.4,Died of cancer,cN0
+PSCC-034,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,12,6,56,Yes,Yes,Yes,Yes,Yes,T3,Yes,No,No,Yes,10.5,Died of cancer,cN0
+PSCC-035,Partial penectomy,Grade 2,Usual,Yes,Yes,No,Corpus spongiosum,9,NA,68,No,No,No,No,Yes,T2,No,NA,NA,NA,105.2,Alive without disease,cN0
+PSCC-036,Partial penectomy,Grade 1,Verrucous,Yes,Yes,No,Corpus spongiosum,5,NA,44,No,No,No,No,No,T2,No,NA,NA,NA,213.8,Alive without disease,cN0
+PSCC-037,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus cavernosum,8,NA,38,No,No,No,No,No,T2,No,NA,NA,NA,207.4,Alive without disease,cN0
+PSCC-038,Total penectomy,Grade 2,Usual,Yes,Yes,No,Corpus spongiosum,6,3,74,Yes,Yes,No,No,Yes,T2,Yes,No,Yes,No,4.2,Died of cancer,cN2
+PSCC-039,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,4,3,40,Yes,No,NA,No,No,NA,No,NA,NA,NA,58.9,Alive without disease,cN0
+PSCC-040,Partial penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,13,2,66,No,No,No,No,No,T2,No,NA,NA,NA,203.8,Alive without disease,cN0
+PSCC-041,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,12,10,66,Yes,Yes,NA,Yes,Yes,NA,No,NA,NA,NA,24.3,Alive with disease,cN2
+PSCC-042,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,7,2,50,Yes,Yes,Yes,No,Yes,T3,Yes,Yes,No,No,62.2,Alive without disease,cN1
+PSCC-043,Partial penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,6,NA,66,Yes,Yes,No,Yes,Yes,T2,No,NA,NA,NA,23.9,Died of other causes,cN2
+PSCC-044,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,4,NA,48,Yes,No,NA,No,No,NA,No,NA,NA,NA,91.4,Died of other causes,cN2
+PSCC-045,Total penectomy,Grade 3,Mixed,Yes,No,No,Corpus cavernosum,13,4.5,75,No,No,Yes,Yes,Yes,T3,Yes,No,Yes,No,28.5,Died of other causes,cN0
+PSCC-046,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus cavernosum,8,NA,74,No,No,No,No,No,T2,No,NA,NA,NA,17,Lost at follow-up,cN0
+PSCC-047,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,12,NA,45,Yes,Yes,NA,Yes,Yes,NA,Yes,No,Yes,No,6.5,Died of cancer,cN2
+PSCC-048,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,7,4,38,Yes,Yes,NA,Yes,Yes,NA,Yes,No,Yes,Yes,2.3,Alive with disease,cN2
+PSCC-049,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Lamina propria,1,NA,71,No,No,No,No,No,T1,No,NA,NA,NA,96,Alive without disease,cN1
+PSCC-050,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,8,5,72,Yes,Yes,No,No,Yes,T2,Yes,No,No,Yes,73.5,Died of cancer,cN2
+PSCC-051,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,8,NA,68,No,No,NA,Yes,Yes,NA,No,NA,NA,NA,46.2,Alive without disease,cN2
+PSCC-052,Total penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,3,NA,50,Yes,Yes,Yes,Yes,Yes,T3,No,NA,NA,NA,165.6,Alive without disease,cN2
+PSCC-053,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus spongiosum,8,NA,44,No,No,No,Yes,No,T2,No,NA,NA,NA,145.5,Alive without disease,cN0
+PSCC-054,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,5,2,49,No,No,No,No,No,T2,No,NA,NA,NA,45.7,Alive without disease,cN0
+PSCC-055,Total penectomy,Grade 3,Sarcomatoid,Yes,No,No,Corpus cavernosum,3,NA,60,Yes,Yes,Yes,No,Yes,T3,Yes,No,Yes,Yes,3.6,Died of cancer,cN3
+PSCC-056,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,5,3,66,No,No,No,No,No,T2,Yes,No,Yes,No,21.2,Died of other causes,cN0
+PSCC-057,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,9,NA,24,No,No,No,No,No,T2,No,NA,NA,NA,42.5,Alive without disease,cN0
+PSCC-058,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus cavernosum,8,5,85,No,No,Yes,No,No,T3,No,NA,NA,NA,194.9,Alive without disease,cN2
+PSCC-059,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,NA,2,39,No,No,No,Yes,No,T2,No,NA,NA,NA,177.4,Alive without disease,cN0
+PSCC-060,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,5,NA,50,No,No,Yes,No,No,T3,No,NA,NA,NA,256.6,Alive without disease,cN0
+PSCC-061,Total penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,2,3.5,45,Yes,No,No,No,Yes,T2,No,NA,NA,NA,249.4,Alive without disease,NA
+PSCC-062,Partial penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,NA,NA,55,No,No,Yes,NA,NA,T3,No,NA,NA,NA,117.3,Died of other causes,cN0
+PSCC-063,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus spongiosum,10,5.5,78,No,No,No,No,No,T2,No,NA,NA,NA,71.6,Died of other causes,cN0
+PSCC-064,Total penectomy,Grade 3,Adenosquamous,Yes,No,No,Corpus cavernosum,18,12,65,No,No,Yes,Yes,Yes,T3,Yes,Yes,Yes,No,3.8,Alive with disease,cN0
+PSCC-065,Total penectomy,Grade 1,Usual,No,No,Yes,Preputial dartos,4,NA,62,Yes,No,NA,Yes,Yes,NA,No,NA,NA,NA,155.4,Alive without disease,cN2
+PSCC-066,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,3,3.5,52,Yes,Yes,NA,No,No,NA,No,NA,NA,NA,63.1,Died of other causes,cN1
+PSCC-067,Total penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,15,3.5,42,Yes,Yes,Yes,Yes,Yes,T3,Yes,No,No,Yes,7.9,Died of cancer,cN1
+PSCC-068,Partial penectomy,Grade 2,Usual,Yes,No,No,Lamina propria,2,3.5,50,No,No,No,No,No,T1,No,NA,NA,NA,46.2,Alive without disease,cN0
+PSCC-069,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus cavernosum,5,4,43,No,No,Yes,No,No,T3,No,NA,NA,NA,189.1,Alive without disease,cN2
+PSCC-070,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,13,4,59,Yes,Yes,No,Yes,No,T2,No,NA,NA,NA,4.8,Lost at follow-up,cN1
+PSCC-071,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,5,4,68,Yes,Yes,No,Yes,Yes,T2,No,NA,NA,NA,45.9,Died of other causes,cN1
+PSCC-072,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,7,4,78,Yes,Yes,No,No,No,T2,No,NA,NA,NA,123.9,Alive without disease,cN1
+PSCC-073,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,2,NA,64,Yes,Yes,Yes,No,Yes,T3,No,NA,NA,NA,6.7,Died of other causes,cN2
+PSCC-074,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,7,5,71,No,No,No,No,No,T2,No,NA,NA,NA,146.4,Died of other causes,cN2
+PSCC-075,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,5,4,55,No,No,No,No,No,T2,No,NA,NA,NA,220.8,Alive without disease,cN0
+PSCC-076,Total penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,12,NA,41,Yes,Yes,No,Yes,Yes,T2,Yes,No,Yes,No,6.8,Died of cancer,cN0
+PSCC-077,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,8,NA,57,No,No,NA,No,Yes,NA,Yes,No,Yes,No,73.5,Died of other causes,cN0
+PSCC-078,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,12,5,44,No,No,Yes,Yes,No,T3,No,NA,NA,NA,118,Alive without disease,cN1
+PSCC-079,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,NA,2.5,56,No,No,No,NA,NA,T2,No,NA,NA,NA,229.3,Died of other causes,cN0
+PSCC-080,Total penectomy,Grade 2,Warty,NA,NA,NA,Preputial dartos,5,NA,58,Yes,No,No,No,No,NA,No,NA,NA,NA,18.8,Lost at follow-up,cN2
+PSCC-081,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,NA,NA,45,No,No,No,Yes,No,T2,No,NA,NA,NA,433.9,Died of other causes,cN0
+PSCC-082,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,11,4,48,No,No,Yes,No,No,T3,No,NA,NA,NA,242.9,Alive without disease,cN0
+PSCC-083,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,5,3,49,No,No,No,No,No,T2,No,NA,NA,NA,265.8,Alive without disease,cN0
+PSCC-084,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,7,7,62,Yes,No,No,Yes,No,T2,No,NA,NA,NA,87.4,Died of other causes,cN2
+PSCC-085,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,12,3.5,53,Yes,No,No,No,Yes,T2,Yes,No,No,Yes,60.8,Died of cancer,cN1
+PSCC-086,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,11,5,53,Yes,Yes,Yes,No,Yes,T3,Yes,No,Yes,Yes,15.5,Died of cancer,cN2
+PSCC-087,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,8,5,67,Yes,Yes,Yes,Yes,Yes,T3,NA,NA,NA,NA,1.9,Died of cancer,cN2
+PSCC-088,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,NA,NA,40,No,No,No,NA,NA,T2,No,NA,NA,NA,13.7,Lost at follow-up,cN1
+PSCC-089,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,13,2,55,No,No,No,No,Yes,T2,Yes,No,Yes,No,15.7,Alive with disease,cN0
+PSCC-090,Partial penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,5,6,54,Yes,No,Yes,No,No,T3,No,NA,NA,NA,53.4,Died of other causes,cN0
+PSCC-091,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,10,3,63,No,No,No,Yes,No,T2,No,NA,NA,NA,145.2,Died of other causes,cN0
+PSCC-092,Total penectomy,Grade 2,Warty,Yes,Yes,Yes,Corpus cavernosum,NA,10,31,Yes,No,No,No,No,T2,No,NA,NA,NA,87.4,Alive without disease,cN2
+PSCC-093,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,12,2.5,65,No,No,No,No,No,T2,No,NA,NA,NA,149.1,Alive without disease,cN0
+PSCC-094,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,6,5,40,No,No,No,No,No,T2,Yes,No,Yes,No,27.8,Died of cancer,cN1
+PSCC-095,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,4,NA,48,No,No,No,No,No,T2,No,NA,NA,NA,27.5,Lost at follow-up,cN0
+PSCC-096,Total penectomy,Grade 2,Warty,Yes,No,No,Corpus spongiosum,6,NA,54,No,No,NA,No,No,NA,No,NA,NA,NA,223.3,Died of other causes,cN2
+PSCC-097,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,NA,NA,45,Yes,No,Yes,No,Yes,T3,No,NA,NA,NA,30.6,Lost at follow-up,cN2
+PSCC-098,Partial penectomy,Grade 3,Mixed,Yes,No,No,Corpus cavernosum,8,NA,70,No,No,Yes,No,No,T3,No,NA,NA,NA,36.6,Alive without disease,cN0
+PSCC-099,Total penectomy,Grade 1,Papillary,Yes,No,No,Corpus spongiosum,4,NA,68,Yes,No,No,No,No,T2,No,NA,NA,NA,198.6,Died of other causes,cN2
+PSCC-100,Partial penectomy,Grade 3,Mixed,Yes,No,No,Corpus cavernosum,15,2,59,No,No,No,Yes,No,T2,Yes,Yes,Yes,No,17,Lost at follow-up,cN1
+PSCC-101,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,4,NA,70,No,No,Yes,No,No,T3,No,NA,NA,NA,18.8,Alive without disease,cN0
+PSCC-102,Partial penectomy,Grade 2,Usual,Yes,No,No,Preputial dartos,7,2.5,48,No,No,No,No,No,T2,Yes,No,Yes,No,9.9,Died of cancer,cN0
+PSCC-103,Total penectomy,Grade 1,Verrucous,Yes,No,No,Corpus cavernosum,7,4.5,75,No,No,Yes,No,No,T3,No,NA,NA,NA,86.3,Died of other causes,cN0
+PSCC-104,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,4,NA,57,Yes,No,NA,No,No,NA,No,NA,NA,NA,225,Died of other causes,cN0
+PSCC-105,Total penectomy,Grade 1,Mixed,Yes,No,No,Corpus cavernosum,1,3,67,No,No,Yes,No,No,T3,No,NA,NA,NA,26.7,Alive without disease,cN1
+PSCC-106,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,8,NA,42,Yes,No,No,Yes,Yes,T2,No,NA,NA,NA,139.7,Alive without disease,cN0
+PSCC-107,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,8,3,77,Yes,Yes,No,No,No,T2,Yes,No,Yes,No,7.5,Died of cancer,cN1
+PSCC-108,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus cavernosum,10,6.5,32,No,No,Yes,No,No,T3,Yes,No,Yes,No,150.1,Alive without disease,cN0
+PSCC-109,Total penectomy,Grade 2,Usual,Yes,Yes,No,Corpus cavernosum,8,4,35,Yes,Yes,NA,Yes,Yes,NA,Yes,No,Yes,No,10.2,Died of cancer,cN3
+PSCC-110,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,7,NA,73,No,No,No,No,No,T2,No,NA,NA,NA,8.7,Lost at follow-up,cN0
+PSCC-111,Partial penectomy,Grade 1,Usual,Yes,Yes,Yes,Lamina propria,1,2.5,66,No,No,No,No,No,T1,No,NA,NA,NA,84.6,Alive without disease,cN0
+PSCC-112,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,9,4,66,No,No,No,No,Yes,T2,Yes,No,Yes,No,36.4,Died of cancer,cN2
+PSCC-113,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,6,NA,76,No,No,No,NA,NA,T2,No,NA,NA,NA,7,Lost at follow-up,cN0
+PSCC-114,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,14,4,51,No,No,NA,Yes,No,NA,No,NA,NA,NA,352,Alive without disease,cN2
+PSCC-115,Partial penectomy,Grade 1,Papillary,Yes,No,No,Corpus cavernosum,7,NA,70,No,No,No,No,No,T2,No,NA,NA,NA,220.5,Alive without disease,cN0
+PSCC-116,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,4,NA,31,No,No,No,No,No,T2,No,NA,NA,NA,226.4,Alive without disease,cN0
+PSCC-117,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,10,NA,58,No,No,No,No,No,T2,No,NA,NA,NA,4.6,Alive without disease,cN0
+PSCC-118,Partial penectomy,Grade 3,Warty,Yes,No,No,Corpus cavernosum,3,NA,65,Yes,No,Yes,Yes,No,T3,Yes,No,Yes,No,49,Died of other causes,cN2
+PSCC-119,Partial penectomy,Grade 3,Adenosquamous,Yes,No,No,Corpus cavernosum,NA,3,66,Yes,Yes,No,No,No,T2,No,NA,NA,NA,2.5,Lost at follow-up,cN1
+PSCC-120,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,6,NA,64,No,No,NA,No,No,NA,No,NA,NA,NA,214.7,Died of other causes,cN0
+PSCC-121,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus spongiosum,5,9,33,Yes,Yes,No,No,No,T2,No,NA,NA,NA,188.8,Alive without disease,cN0
+PSCC-122,Total penectomy,Grade 2,Papillary,Yes,Yes,Yes,Corpus cavernosum,8,9,45,Yes,Yes,No,No,No,T2,Yes,No,Yes,No,13.1,Alive with disease,cN0
+PSCC-123,Partial penectomy,Grade 2,Warty,Yes,No,No,Corpus cavernosum,12,NA,58,No,No,No,No,No,T2,Yes,Yes,Yes,No,5.5,Alive with disease,cN2
+PSCC-124,Total penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,6,8,41,No,No,No,No,No,T2,Yes,No,Yes,No,6.3,Died of cancer,cN2
+PSCC-125,Partial penectomy,Grade 2,Warty,Yes,No,No,Corpus cavernosum,8,NA,75,No,No,No,No,No,T2,No,NA,NA,NA,1.3,Lost at follow-up,cN1
+PSCC-126,Partial penectomy,Grade 1,Usual,Yes,Yes,Yes,Lamina propria,1,1.5,56,No,No,No,No,No,T1,No,NA,NA,NA,221.5,Alive without disease,cN0
+PSCC-127,Partial penectomy,Grade 1,Papillary,Yes,No,No,Corpus cavernosum,7,NA,76,No,No,No,No,No,T2,No,NA,NA,NA,3.7,Lost at follow-up,cN0
+PSCC-128,Total penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,6,6,45,No,No,Yes,No,No,T3,Yes,No,Yes,No,15.2,Alive with disease,cN1
+PSCC-129,Partial penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,NA,NA,73,Yes,Yes,Yes,Yes,No,T3,No,NA,NA,NA,47.4,Died of other causes,cN0
+PSCC-130,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,8,2.3,68,No,No,NA,No,No,NA,Yes,No,Yes,No,98.4,Died of cancer,cN0
+PSCC-131,Partial penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,11,2.5,81,No,No,NA,Yes,No,NA,Yes,No,Yes,No,29.2,Alive with disease,cN1
+PSCC-132,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,4,NA,62,Yes,Yes,No,Yes,No,T2,No,NA,NA,NA,213.9,Alive without disease,cN0
+PSCC-133,Total penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,12,5.5,39,Yes,Yes,Yes,Yes,Yes,T3,Yes,No,Yes,Yes,22.8,Died of cancer,cN0
+PSCC-134,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,5,NA,88,No,No,No,No,No,T2,No,NA,NA,NA,90.6,Died of other causes,cN0
+PSCC-135,Total penectomy,Grade 1,Verrucous,Yes,Yes,Yes,Corpus cavernosum,7,9,66,No,No,No,No,No,T2,No,NA,NA,NA,175.4,Died of other causes,cN2
+PSCC-136,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,NA,5,76,No,No,Yes,Yes,No,T3,No,NA,NA,NA,86.5,Died of other causes,cN0
+PSCC-137,Partial penectomy,Grade 3,Sarcomatoid,Yes,No,No,Corpus cavernosum,10,NA,67,No,No,NA,Yes,No,NA,No,NA,NA,NA,89.6,Died of other causes,cN2
+PSCC-138,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,3,4.5,65,Yes,No,No,No,No,T2,No,NA,NA,NA,198,Alive without disease,cN0
+PSCC-139,Total penectomy,Grade 1,Usual,Yes,Yes,Yes,Corpus cavernosum,15,5.5,66,No,No,NA,No,No,NA,No,NA,NA,NA,47.6,Died of other causes,cN1
+PSCC-140,Partial penectomy,Grade 3,Usual,Yes,Yes,No,Corpus cavernosum,13,6.5,71,No,No,NA,Yes,Yes,NA,Yes,No,Yes,No,154.1,Died of other causes,cN0
+PSCC-141,Total penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus spongiosum,8,6,60,No,No,NA,No,Yes,NA,No,NA,NA,NA,160.3,Died of other causes,cN0
+PSCC-142,Partial penectomy,Grade 1,Adenosquamous,Yes,No,No,Corpus spongiosum,7,NA,67,No,No,No,Yes,No,T2,No,NA,NA,NA,196.8,Alive without disease,cN0
+PSCC-143,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,8,1,50,Yes,Yes,No,Yes,No,T2,Yes,No,No,Yes,20.1,Died of cancer,NA
+PSCC-144,Local excision,Grade 3,Usual,NA,NA,NA,Preputial dartos,7,NA,59,No,No,No,No,No,NA,No,NA,NA,NA,83,Died of other causes,cN0
+PSCC-145,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,12,2.3,50,Yes,No,NA,No,No,NA,No,NA,NA,NA,141.4,Alive without disease,cN2
+PSCC-146,Partial penectomy,Grade 1,Mixed,NA,NA,NA,Preputial dartos,6,NA,75,No,No,No,No,No,NA,No,NA,NA,NA,80,Died of other causes,cN1
+PSCC-147,Partial penectomy,Grade 2,Warty,Yes,Yes,Yes,Corpus spongiosum,6,4.5,73,No,No,NA,No,No,NA,No,NA,NA,NA,155,Died of other causes,cN0
+PSCC-148,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,13,7.5,40,No,No,No,No,No,T2,Yes,No,Yes,No,22.5,Died of cancer,cN2
+PSCC-149,Partial penectomy,Grade 3,Warty,Yes,No,No,Corpus cavernosum,15,5,48,Yes,Yes,Yes,No,No,T3,No,NA,NA,NA,4.5,Lost at follow-up,cN1
+PSCC-150,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,6,4,58,No,No,No,No,No,T2,No,NA,NA,NA,132,Alive without disease,cN2
+PSCC-151,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,7,NA,78,No,No,NA,No,No,NA,No,NA,NA,NA,8.7,Lost at follow-up,cN0
+PSCC-152,Partial penectomy,Grade 3,Basaloid,Yes,No,No,Corpus spongiosum,8,NA,71,No,No,No,No,No,T2,No,NA,NA,NA,1.1,Lost at follow-up,cN2
+PSCC-153,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus spongiosum,7,2,47,No,No,No,No,No,T2,No,NA,NA,NA,163.2,Died of other causes,cN0
+PSCC-154,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,17,3,42,No,No,NA,No,No,NA,Yes,No,Yes,No,11.2,Alive with disease,cN1
+PSCC-155,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,15,NA,53,Yes,Yes,Yes,Yes,No,T3,Yes,Yes,Yes,No,11.5,Died of cancer,cN2
+PSCC-156,Partial penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,18,6.3,55,Yes,Yes,NA,Yes,NA,NA,Yes,No,No,Yes,19.9,Alive with disease,cN1
+PSCC-157,Partial penectomy,Grade 1,Usual,NA,NA,NA,Preputial dartos,3,NA,69,No,No,NA,No,No,NA,NA,NA,NA,NA,24.8,Died of cancer,cN0
+PSCC-158,Partial penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,15,5.7,78,Yes,Yes,No,No,Yes,T2,No,NA,NA,NA,97.5,Died of other causes,cN2
+PSCC-159,Partial penectomy,Grade 1,Warty,Yes,No,No,Corpus spongiosum,5,NA,70,No,No,No,No,No,T2,No,NA,NA,NA,4.6,Lost at follow-up,cN0
+PSCC-160,Total penectomy,Grade 3,Warty,Yes,Yes,Yes,Corpus cavernosum,1,8,58,No,No,NA,Yes,No,NA,No,NA,NA,NA,136,Alive without disease,cN2
+PSCC-161,Partial penectomy,Grade 3,Usual,Yes,No,No,Preputial dartos,5,NA,68,No,No,No,No,No,T2,Yes,Yes,Yes,No,4.6,Died of cancer,NA
+PSCC-162,Partial penectomy,Grade 1,Usual,Yes,Yes,Yes,Corpus spongiosum,7,7.2,49,No,No,Yes,No,No,T3,No,NA,NA,NA,185.3,Alive without disease,cN0
+PSCC-163,Partial penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,10,3.5,50,Yes,Yes,Yes,No,Yes,T3,Yes,No,Yes,Yes,15.5,Alive with disease,cN2
+PSCC-164,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,15,7,76,No,No,Yes,No,No,T3,No,NA,NA,NA,40.2,Died of other causes,cN0
+PSCC-165,Partial penectomy,Grade 1,Mixed,Yes,Yes,Yes,Preputial dartos,7,3.5,58,No,No,No,No,No,T2,No,NA,NA,NA,128,Alive without disease,cN0
+PSCC-166,Partial penectomy,Grade 3,Usual,Yes,Yes,No,Corpus spongiosum,5,2.5,55,No,No,NA,No,No,NA,No,NA,NA,NA,109.9,Died of other causes,cN2
+PSCC-167,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,9,3,30,No,No,No,No,Yes,T2,No,NA,NA,NA,146.7,Alive without disease,cN0
+PSCC-168,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,13,NA,47,Yes,Yes,Yes,Yes,Yes,T3,Yes,No,Yes,No,8.9,Died of cancer,cN1
+PSCC-169,Partial penectomy,Grade 2,Usual,No,No,Yes,Preputial dartos,6,2.8,72,No,No,NA,No,No,NA,Yes,Yes,Yes,No,13.9,Lost at follow-up,cN2
+PSCC-170,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,4,NA,28,Yes,Yes,Yes,Yes,Yes,T3,No,NA,NA,NA,31.9,Died of other causes,cN2
+PSCC-171,Partial penectomy,Grade 2,Warty,Yes,Yes,Yes,Corpus spongiosum,6,5,61,Yes,Yes,Yes,No,Yes,T3,No,NA,NA,NA,34.7,Died of other causes,cN1
+PSCC-172,Partial penectomy,Grade 2,Mixed,Yes,Yes,Yes,Corpus spongiosum,7,5.5,47,Yes,Yes,NA,No,No,NA,Yes,Yes,No,No,10.1,Alive with disease,cN2
+PSCC-173,Partial penectomy,Grade 2,Usual,NA,NA,NA,Lamina propria,1,NA,79,No,No,No,No,No,T1,No,NA,NA,NA,30.2,Alive without disease,cN0
+PSCC-174,Partial penectomy,Grade 1,Mixed,Yes,Yes,No,Corpus spongiosum,6,6,68,No,No,NA,No,No,NA,No,NA,NA,NA,116.7,Died of other causes,cN2
+PSCC-175,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,2,NA,73,Yes,Yes,Yes,Yes,Yes,T3,Yes,No,No,Yes,36,Died of cancer,cN2
+PSCC-176,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,9,4,34,No,No,Yes,No,Yes,T3,No,NA,NA,NA,110.1,Alive without disease,cN0
+PSCC-177,Partial penectomy,Grade 1,Verrucous,Yes,Yes,Yes,Corpus spongiosum,12,6.5,61,No,No,Yes,No,No,T3,No,NA,NA,NA,136.3,Died of other causes,cN0
+PSCC-178,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,6,10,55,Yes,Yes,NA,No,Yes,NA,Yes,No,Yes,No,26.6,Died of cancer,cN2
+PSCC-179,Partial penectomy,Grade 1,Mixed,Yes,No,No,Corpus spongiosum,7,6.4,77,No,No,NA,No,No,NA,No,NA,NA,NA,81.8,Died of other causes,cN0
+PSCC-180,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,4,1.3,58,Yes,Yes,No,No,Yes,T2,Yes,No,Yes,No,34.2,Alive with disease,cN2
+PSCC-181,Partial penectomy,Grade 1,Usual,Yes,Yes,Yes,Preputial dartos,6,5,33,No,No,No,No,No,T2,No,NA,NA,NA,152.2,Alive without disease,cN0
+PSCC-182,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,12,16,50,No,No,No,Yes,Yes,T2,No,NA,NA,NA,60.6,Alive without disease,cN0
+PSCC-183,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,8,NA,47,Yes,No,Yes,No,Yes,T3,No,NA,NA,NA,263.1,Died of other causes,cN2
+PSCC-184,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,15,5,33,Yes,Yes,Yes,No,Yes,T3,Yes,No,Yes,No,3.6,Alive with disease,cN2
+PSCC-185,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,14,10,27,Yes,Yes,Yes,Yes,Yes,T3,Yes,Yes,Yes,No,8,Alive with disease,cN0
+PSCC-186,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,3,NA,43,No,No,No,No,No,T2,No,NA,NA,NA,96.3,Died of other causes,cN2
+PSCC-187,Total penectomy,Grade 1,Verrucous,Yes,Yes,Yes,Corpus cavernosum,8,5,47,Yes,No,No,No,No,T2,No,NA,NA,NA,125.9,Died of other causes,cN0
+PSCC-188,Partial penectomy,Grade 2,Warty,Yes,No,No,Corpus cavernosum,8,NA,69,Yes,No,Yes,No,No,T3,No,NA,NA,NA,33.6,Alive without disease,cN0
+PSCC-189,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,3,NA,21,Yes,No,NA,No,No,NA,No,NA,NA,NA,58.6,Alive without disease,cN1
+PSCC-190,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,8,2.5,47,Yes,No,No,Yes,No,T2,No,NA,NA,NA,114.1,Alive without disease,cN0
+PSCC-191,Partial penectomy,Grade 3,Mixed,Yes,No,No,Corpus cavernosum,10,5,34,Yes,No,No,No,No,T2,No,NA,NA,NA,89.6,Alive without disease,cN2
+PSCC-192,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,8,2.5,63,Yes,No,No,Yes,No,T2,No,NA,NA,NA,75.9,Died of other causes,cN0
+PSCC-193,Total penectomy,Grade 2,Usual,No,Yes,Yes,Preputial dartos,4,NA,56,Yes,No,NA,No,Yes,NA,No,NA,NA,NA,136.6,Died of other causes,cN0
+PSCC-194,Partial penectomy,Grade 3,Usual,Yes,No,No,Lamina propria,2,3,45,Yes,No,No,No,No,T1,No,NA,NA,NA,98.7,Alive without disease,cN0
+PSCC-195,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus cavernosum,10,NA,44,Yes,No,No,No,Yes,T2,No,NA,NA,NA,49.2,Died of other causes,cN0
+PSCC-196,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,13,5,45,Yes,Yes,Yes,Yes,Yes,T3,Yes,No,Yes,No,12.6,Alive with disease,cN2
+PSCC-197,Partial penectomy,Grade 2,Warty,Yes,No,No,Corpus spongiosum,9,2.2,43,Yes,No,Yes,No,No,T3,No,NA,NA,NA,98.9,Alive without disease,cN0
+PSCC-198,Total penectomy,Grade 1,Mixed,Yes,No,No,Corpus spongiosum,6,NA,50,Yes,No,Yes,No,No,T3,No,NA,NA,NA,193,Died of other causes,cN0
+PSCC-199,Partial penectomy,Grade 1,Warty,Yes,Yes,Yes,Corpus cavernosum,8,5,55,Yes,No,Yes,No,No,T3,No,NA,NA,NA,22.4,Alive without disease,cN1
+PSCC-200,Total penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,3,NA,37,Yes,No,NA,No,Yes,NA,No,NA,NA,NA,265.4,Died of other causes,cN2
+PSCC-201,Partial penectomy,Grade 1,Papillary,Yes,No,No,Corpus spongiosum,7,NA,64,Yes,No,No,No,No,T2,No,NA,NA,NA,134.6,Alive without disease,cN0
+PSCC-202,Total penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,20,NA,49,No,No,Yes,Yes,Yes,T3,Yes,Yes,Yes,No,16.7,Died of cancer,cN2
+PSCC-203,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,8,2.8,43,Yes,No,No,No,No,T2,No,NA,NA,NA,20.9,Alive without disease,cN0
+PSCC-204,Total penectomy,Grade 3,Mixed,Yes,Yes,Yes,Corpus spongiosum,8,NA,52,Yes,No,Yes,No,Yes,T3,No,NA,NA,NA,203.1,Died of other causes,cN3
+PSCC-205,Partial penectomy,Grade 3,Warty,Yes,Yes,Yes,Corpus spongiosum,10,6,74,Yes,No,No,No,No,T2,No,NA,NA,NA,65.7,Died of other causes,cN1
+PSCC-206,Partial penectomy,Grade 2,Mixed,Yes,No,No,Corpus cavernosum,7,NA,79,No,No,No,No,No,T2,No,NA,NA,NA,69.7,Alive without disease,cN0
+PSCC-207,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,11,NA,59,Yes,Yes,No,No,Yes,T2,No,NA,NA,NA,178,Died of other causes,cN2
+PSCC-208,Partial penectomy,Grade 1,Verrucous,Yes,Yes,Yes,Corpus spongiosum,6,2.5,38,Yes,No,No,No,No,T2,No,NA,NA,NA,71.2,Alive without disease,cN0
+PSCC-209,Total penectomy,Grade 3,Basaloid,Yes,No,No,Corpus spongiosum,7,NA,33,Yes,Yes,No,No,Yes,T2,No,NA,NA,NA,36.7,Alive without disease,cN2
+PSCC-210,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus spongiosum,10,7.5,24,Yes,No,No,Yes,No,T2,No,NA,NA,NA,35.6,Alive without disease,cN1
+PSCC-211,Partial penectomy,Grade 3,Usual,Yes,Yes,No,Corpus cavernosum,10,3,46,Yes,Yes,NA,No,Yes,NA,No,NA,NA,NA,12.9,Lost at follow-up,cN1
+PSCC-212,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,8,4,52,Yes,Yes,Yes,Yes,Yes,T3,Yes,No,Yes,No,12.4,Alive with disease,cN1
+PSCC-213,Total penectomy,Grade 3,Usual,Yes,Yes,No,Corpus cavernosum,15,NA,49,Yes,No,NA,Yes,Yes,NA,No,NA,NA,NA,31.9,Lost at follow-up,cN2
+PSCC-214,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,8,4.5,31,No,No,Yes,No,No,T3,No,NA,NA,NA,100.1,Died of other causes,NA
+PSCC-215,Total penectomy,Grade 1,Mixed,Yes,No,No,Corpus cavernosum,20,NA,48,Yes,No,Yes,Yes,Yes,T3,No,NA,NA,NA,237.6,Alive without disease,cN2
+PSCC-216,Total penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,6,NA,28,Yes,No,Yes,No,Yes,T3,No,NA,NA,NA,250.6,Alive without disease,cN0
+PSCC-217,Partial penectomy,Grade 1,Mixed,Yes,Yes,No,Corpus cavernosum,NA,NA,52,No,No,No,NA,NA,T2,No,NA,NA,NA,198.3,Alive without disease,cN2
+PSCC-218,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,7,NA,77,Yes,Yes,Yes,No,No,T3,No,NA,NA,NA,13,Lost at follow-up,cN1
+PSCC-219,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,9,NA,59,No,No,Yes,No,No,T3,No,NA,NA,NA,47.8,Died of other causes,cN1
+PSCC-220,Total penectomy,Grade 1,Papillary,Yes,No,No,Corpus spongiosum,6,NA,36,Yes,No,NA,No,No,NA,No,NA,NA,NA,453,Alive without disease,cN1
+PSCC-221,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,8,NA,78,Yes,No,No,No,No,T2,No,NA,NA,NA,12.5,Died of other causes,cN2
+PSCC-222,Total penectomy,Grade 3,Usual,Yes,Yes,No,Corpus spongiosum,7,5,50,No,No,NA,No,No,NA,Yes,No,Yes,No,287.5,Alive without disease,cN2
+PSCC-223,Total penectomy,Grade 1,Mixed,Yes,No,No,Corpus spongiosum,7,NA,46,Yes,No,Yes,No,Yes,T3,No,NA,NA,NA,260.9,Died of other causes,cN0
+PSCC-224,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,7,NA,53,Yes,Yes,NA,No,Yes,NA,Yes,No,Yes,No,9.5,Died of cancer,cN1
+PSCC-225,Partial penectomy,Grade 1,Mixed,Yes,No,No,Corpus cavernosum,7,NA,48,No,No,No,No,No,T2,No,NA,NA,NA,280.6,Alive without disease,cN2
+PSCC-226,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,20,8,53,Yes,No,Yes,Yes,Yes,T3,No,NA,NA,NA,86.8,Died of other causes,cN2
+PSCC-227,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,3,4,42,Yes,No,NA,No,Yes,NA,No,NA,NA,NA,6.3,Lost at follow-up,cN2
+PSCC-228,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Preputial dartos,6,6,76,Yes,No,NA,No,No,NA,No,NA,NA,NA,48.8,Died of other causes,cN2
+PSCC-229,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,9,NA,44,No,No,NA,Yes,No,NA,No,NA,NA,NA,106.1,Alive without disease,cN2
+PSCC-230,Partial penectomy,Grade 1,Papillary,Yes,Yes,Yes,Preputial dartos,5,NA,27,No,No,NA,Yes,Yes,NA,Yes,No,Yes,No,32.2,Died of cancer,cN2
+PSCC-231,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,12,NA,55,No,No,NA,Yes,No,NA,No,NA,NA,NA,36.6,Died of other causes,cN0
+PSCC-232,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,9,NA,53,No,No,NA,No,No,NA,No,NA,NA,NA,89.4,Died of other causes,cN2
+PSCC-233,Total penectomy,Grade 3,Basaloid,Yes,No,No,Corpus cavernosum,14,NA,50,Yes,Yes,No,Yes,Yes,T2,No,NA,NA,NA,66.5,Alive without disease,cN1
+PSCC-234,Partial penectomy,Grade 1,Mixed,Yes,Yes,Yes,Preputial dartos,6,NA,66,No,No,NA,No,No,NA,No,NA,NA,NA,139.3,Alive without disease,cN2
+PSCC-235,Partial penectomy,Grade 3,Usual,Yes,Yes,No,Corpus spongiosum,7,NA,34,No,No,NA,Yes,No,NA,No,NA,NA,NA,321.3,Died of other causes,NA
+PSCC-236,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,10,NA,42,No,No,No,Yes,No,T2,No,NA,NA,NA,43.3,Alive without disease,cN0
+PSCC-237,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,10,3,49,No,No,Yes,No,No,T3,No,NA,NA,NA,235.5,Alive without disease,cN2
+PSCC-238,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Preputial dartos,6,6.5,60,Yes,Yes,NA,No,Yes,NA,Yes,No,No,Yes,7.4,Died of cancer,cN3
+PSCC-239,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,6,NA,45,No,No,No,No,Yes,T2,No,NA,NA,NA,13.3,Lost at follow-up,cN0
+PSCC-240,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,7,3.5,56,Yes,Yes,NA,No,No,NA,Yes,No,Yes,No,6.4,Died of cancer,cN2
+PSCC-241,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,6,4,63,No,No,NA,No,No,NA,No,NA,NA,NA,225.4,Died of other causes,cN2
+PSCC-242,Partial penectomy,Grade 3,Usual,NA,NA,NA,Preputial dartos,8,NA,52,No,No,No,No,No,NA,No,NA,NA,NA,402.9,Died of other causes,cN0
+PSCC-243,Total penectomy,Grade 1,Usual,Yes,Yes,Yes,Preputial dartos,8,8,33,Yes,Yes,NA,No,Yes,NA,No,NA,NA,NA,16.8,Lost at follow-up,cN2
+PSCC-244,Partial penectomy,Grade 1,Usual,Yes,No,No,Lamina propria,2,NA,55,No,No,Yes,No,No,T3,No,NA,NA,NA,163.2,Died of other causes,cN0
+PSCC-245,Total penectomy,Grade 1,Warty,Yes,No,No,Corpus cavernosum,6,11,29,Yes,No,NA,No,No,NA,No,NA,NA,NA,9.4,Lost at follow-up,cN2
+PSCC-246,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,8,3,52,Yes,Yes,Yes,No,No,T3,No,NA,NA,NA,302.7,Died of other causes,cN1
+PSCC-247,Partial penectomy,Grade 2,Usual,No,Yes,Yes,Preputial dartos,4,2.5,40,No,No,No,No,No,T2,No,NA,NA,NA,255.8,Alive without disease,cN0
+PSCC-248,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,12,NA,51,Yes,Yes,NA,No,Yes,NA,NA,NA,NA,NA,1.2,Died of cancer,cN3
+PSCC-249,Circumcision,Grade 2,Usual,No,No,Yes,Preputial dartos,5,3,58,No,No,No,No,No,T2,No,NA,NA,NA,123.9,Died of other causes,cN0
+PSCC-250,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus cavernosum,3,3.5,72,No,No,No,No,No,T2,No,NA,NA,NA,88.9,Died of other causes,cN2
+PSCC-251,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,6,NA,58,No,No,No,No,No,T2,No,NA,NA,NA,308.8,Died of other causes,cN0
+PSCC-252,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,7,4,45,No,No,NA,No,No,NA,No,NA,NA,NA,42.8,Alive without disease,cN0
+PSCC-253,Total penectomy,Grade 1,Usual,Yes,Yes,No,Corpus cavernosum,6,NA,80,No,No,Yes,No,No,T3,No,NA,NA,NA,100.2,Died of other causes,cN1
+PSCC-254,Partial penectomy,Grade 1,Warty,Yes,Yes,No,Corpus spongiosum,5,2,54,No,No,No,No,No,T2,No,NA,NA,NA,185.5,Died of other causes,cN1
+PSCC-255,Circumcision,Grade 1,Warty,NA,NA,NA,Preputial dartos,7,NA,79,No,No,No,No,No,NA,No,NA,NA,NA,22.2,Died of other causes,cN0
+PSCC-256,Partial penectomy,Grade 2,Usual,Yes,Yes,No,Preputial dartos,6,4,77,Yes,Yes,NA,No,Yes,NA,Yes,Yes,Yes,No,13,Died of cancer,cN2
+PSCC-257,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,3,NA,52,Yes,No,Yes,Yes,No,T3,No,NA,NA,NA,45.5,Died of other causes,cN2
+PSCC-258,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,4,2,52,No,No,No,No,No,T2,No,NA,NA,NA,104.9,Died of other causes,cN0
+PSCC-259,Partial penectomy,Grade 1,Papillary,Yes,Yes,Yes,Corpus spongiosum,7,NA,28,Yes,No,No,Yes,Yes,T2,No,NA,NA,NA,19.9,Died of other causes,cN2
+PSCC-260,Partial penectomy,Grade 2,Usual,Yes,Yes,No,Corpus spongiosum,3,2.5,67,Yes,No,Yes,No,Yes,T3,Yes,No,No,Yes,45.4,Died of cancer,cN0
+PSCC-261,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,5,5,41,Yes,No,Yes,No,No,T3,No,NA,NA,NA,179.6,Alive without disease,cN1
+PSCC-262,Total penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,4,3,61,Yes,No,NA,No,No,NA,No,NA,NA,NA,204.5,Died of other causes,cN0
+PSCC-263,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus spongiosum,5,NA,52,Yes,Yes,Yes,Yes,Yes,T3,No,NA,NA,NA,157.3,Died of other causes,cN2
+PSCC-264,Partial penectomy,Grade 1,Usual,Yes,Yes,No,Corpus spongiosum,8,NA,53,No,No,NA,No,No,NA,No,NA,NA,NA,190.3,Died of other causes,cN1
+PSCC-265,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,7,NA,62,Yes,No,NA,Yes,No,NA,No,NA,NA,NA,40.4,Died of other causes,cN0
+PSCC-266,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,10,NA,43,Yes,Yes,Yes,Yes,Yes,T3,Yes,No,Yes,No,8.4,Died of cancer,cN3
+PSCC-267,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,6,NA,50,No,No,No,No,No,T2,No,NA,NA,NA,66.5,Died of other causes,cN1
+PSCC-268,Total penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,4,1.5,68,No,No,No,No,No,T2,No,NA,NA,NA,158.6,Died of other causes,cN0
+PSCC-269,Partial penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus spongiosum,10,NA,54,No,No,Yes,Yes,Yes,T3,Yes,No,Yes,No,150.4,Alive without disease,cN0
+PSCC-270,Total penectomy,Grade 3,Sarcomatoid,Yes,No,No,Corpus cavernosum,NA,NA,44,Yes,Yes,Yes,NA,NA,T3,NA,NA,NA,NA,2,Died of cancer,cN3
+PSCC-271,Partial penectomy,Grade 2,Warty,Yes,Yes,Yes,Corpus cavernosum,6,NA,55,Yes,Yes,No,No,No,T2,NA,NA,NA,NA,1.2,Died of cancer,cN1
+PSCC-272,Partial penectomy,Grade 3,Basaloid,Yes,No,No,Corpus spongiosum,7,3,69,No,No,NA,No,No,NA,No,NA,NA,NA,102,Died of other causes,cN0
+PSCC-273,Total penectomy,Grade 2,Mixed,Yes,No,No,Corpus cavernosum,12,NA,51,Yes,No,Yes,No,No,T3,No,NA,NA,NA,73.7,Died of other causes,cN3
+PSCC-274,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,8,3,53,Yes,No,No,Yes,Yes,T2,No,NA,NA,NA,206.7,Died of other causes,cN2
+PSCC-275,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,4,4,51,Yes,No,No,Yes,No,T2,No,NA,NA,NA,159.1,Alive without disease,cN0
+PSCC-276,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,5,NA,38,No,No,NA,No,No,NA,No,NA,NA,NA,115.7,Alive without disease,cN0
+PSCC-277,Partial penectomy,Grade 2,Usual,Yes,Yes,No,Corpus spongiosum,7,NA,63,Yes,No,Yes,No,Yes,T3,No,NA,NA,NA,88.5,Died of other causes,cN0
+PSCC-278,Local excision,Grade 1,Verrucous,No,No,Yes,Preputial dartos,5,NA,43,No,No,No,No,No,T2,No,NA,NA,NA,199.9,Alive without disease,cN0
+PSCC-279,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus cavernosum,7,NA,87,No,No,NA,No,No,NA,No,NA,NA,NA,73.3,Died of other causes,cN0
+PSCC-280,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,5,NA,53,No,No,No,No,No,T2,No,NA,NA,NA,164.5,Alive without disease,cN0
+PSCC-281,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Lamina propria,7,5.5,37,No,No,No,No,No,T1,No,NA,NA,NA,195.5,Alive without disease,cN0
+PSCC-282,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,9,NA,48,Yes,No,NA,NA,Yes,NA,NA,NA,NA,NA,1.2,Died of cancer,cN0
+PSCC-283,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,9,NA,28,Yes,Yes,Yes,NA,NA,T3,Yes,No,No,Yes,15.2,Died of cancer,cN1
+PSCC-284,Partial penectomy,Grade 3,Usual,Yes,Yes,No,Corpus spongiosum,5,NA,46,No,No,Yes,No,No,T3,No,NA,NA,NA,341.2,Alive without disease,cN0
+PSCC-285,Total penectomy,Grade 2,Usual,Yes,Yes,No,Preputial dartos,6,NA,75,Yes,No,NA,No,Yes,NA,No,NA,NA,NA,71.6,Died of other causes,cN0
+PSCC-286,Partial penectomy,Grade 1,Papillary,Yes,Yes,Yes,Corpus cavernosum,6,7,47,No,No,Yes,No,No,T3,No,NA,NA,NA,386.7,Alive without disease,cN0
+PSCC-287,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,12,5,63,Yes,Yes,NA,Yes,Yes,NA,No,NA,NA,NA,78.7,Died of other causes,cN2
+PSCC-288,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,7,2,65,Yes,Yes,NA,No,Yes,NA,Yes,No,Yes,No,7.8,Died of cancer,cN3
+PSCC-289,Total penectomy,Grade 1,Usual,Yes,Yes,No,Corpus cavernosum,3,NA,56,Yes,No,No,No,No,T2,NA,NA,NA,NA,0.8,Died of cancer,cN0
+PSCC-290,Total penectomy,Grade 2,Warty,Yes,No,No,Corpus cavernosum,3,NA,46,Yes,Yes,Yes,No,No,T3,NA,NA,NA,NA,21.2,Died of cancer,cN2
+PSCC-291,Total penectomy,Grade 2,Usual,NA,NA,NA,Preputial dartos,6,NA,55,No,No,NA,Yes,No,NA,Yes,No,Yes,No,12.3,Died of cancer,cN2
+PSCC-292,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,3,2.5,41,Yes,Yes,NA,No,Yes,NA,Yes,Yes,No,No,179.2,Died of other causes,cN2
+PSCC-293,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus spongiosum,7,NA,55,Yes,No,Yes,No,No,T3,No,NA,NA,NA,4.5,Lost at follow-up,cN1
+PSCC-294,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,7,3,54,No,No,NA,No,No,NA,No,NA,NA,NA,341.7,Alive without disease,cN0
+PSCC-295,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,7,NA,48,No,No,Yes,No,No,T3,Yes,No,Yes,No,17.3,Alive with disease,cN0
+PSCC-296,Partial penectomy,Grade 3,Usual,Yes,Yes,No,Corpus spongiosum,8,5,76,No,No,NA,No,No,NA,No,NA,NA,NA,93.9,Alive without disease,cN1
+PSCC-297,Partial penectomy,Grade 1,Usual,Yes,Yes,Yes,Preputial dartos,8,NA,63,No,No,NA,Yes,No,NA,No,NA,NA,NA,165,Alive without disease,cN0
+PSCC-298,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,10,2,51,Yes,No,No,No,No,T2,No,NA,NA,NA,46.9,Alive without disease,cN0
+PSCC-299,Partial penectomy,Grade 1,Usual,No,No,Yes,Preputial dartos,4,2,48,No,No,No,No,No,T2,No,NA,NA,NA,313.4,Alive without disease,cN0
+PSCC-300,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,5,NA,72,No,No,Yes,No,No,T3,No,NA,NA,NA,37,Alive without disease,cN0
+PSCC-301,Partial penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,3,9,30,Yes,Yes,Yes,NA,No,T3,No,NA,NA,NA,47.1,Alive without disease,cN1
+PSCC-302,Partial penectomy,Grade 2,Usual,Yes,Yes,No,Corpus spongiosum,4,3.5,27,No,No,Yes,No,No,T3,No,NA,NA,NA,310,Alive without disease,cN0
+PSCC-303,Partial penectomy,Grade 1,Warty,Yes,Yes,No,Corpus cavernosum,3,NA,48,No,No,No,No,No,T2,No,NA,NA,NA,309.9,Alive without disease,cN0
+PSCC-304,Total penectomy,Grade 2,Papillary,Yes,No,No,Corpus spongiosum,6,NA,35,Yes,Yes,NA,No,No,NA,No,NA,NA,NA,244.8,Alive without disease,cN2
+PSCC-305,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus spongiosum,4,2,29,No,No,No,No,No,T2,No,NA,NA,NA,194.1,Alive without disease,cN0
+PSCC-306,Partial penectomy,Grade 1,Verrucous,NA,NA,NA,Lamina propria,5,NA,59,No,No,No,No,No,T1,No,NA,NA,NA,111.6,Died of other causes,cN1
+PSCC-307,Total penectomy,Grade 3,Adenosquamous,Yes,No,No,Corpus cavernosum,14,NA,53,Yes,Yes,Yes,Yes,Yes,T3,No,NA,NA,NA,119,Died of other causes,cN2
+PSCC-308,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,5,NA,68,No,No,Yes,No,No,T3,No,NA,NA,NA,97.4,Died of other causes,cN0
+PSCC-309,Total penectomy,Grade 3,Sarcomatoid,Yes,No,No,Corpus cavernosum,18,5,46,Yes,Yes,NA,No,Yes,NA,Yes,No,Yes,Yes,6.7,Died of cancer,cN2
+PSCC-310,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,4,NA,53,No,No,No,No,No,T2,No,NA,NA,NA,195.9,Died of other causes,cN0
+PSCC-311,Total penectomy,Grade 2,Usual,Yes,No,No,Preputial dartos,7,NA,44,Yes,Yes,Yes,No,Yes,T3,No,NA,NA,NA,254.4,Alive without disease,cN2
+PSCC-312,Partial penectomy,Grade 1,Papillary,Yes,No,No,Corpus spongiosum,8,6,50,No,No,NA,No,No,NA,No,NA,NA,NA,72,Alive without disease,cN0
+PSCC-313,Total penectomy,Grade 1,Papillary,Yes,No,No,Corpus cavernosum,6,6.5,54,No,No,NA,No,No,NA,No,NA,NA,NA,74.7,Alive without disease,cN0
+PSCC-314,Total penectomy,Grade 2,Papillary,Yes,No,No,Corpus cavernosum,6,1,41,No,No,NA,No,No,NA,No,NA,NA,NA,211.6,Alive without disease,cN1
+PSCC-315,Total penectomy,Grade 2,Papillary,No,No,Yes,Preputial dartos,8,NA,50,No,No,NA,No,No,NA,No,NA,NA,NA,151.7,Alive without disease,cN0
+PSCC-316,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,3,7,44,Yes,No,Yes,No,No,T3,No,NA,NA,NA,303.6,Alive without disease,cN0
+PSCC-317,Total penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,8,5,61,No,No,Yes,No,No,T3,No,NA,NA,NA,93.7,Alive without disease,cN1
+PSCC-318,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,5,3.5,67,No,No,No,No,No,T2,No,NA,NA,NA,298.8,Alive without disease,cN0
+PSCC-319,Partial penectomy,Grade 2,Warty,Yes,No,No,Corpus spongiosum,6,5,79,No,No,No,No,No,T2,No,NA,NA,NA,37.4,Alive without disease,cN0
+PSCC-320,Total penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus spongiosum,10,9,46,No,No,No,Yes,No,T2,Yes,No,Yes,No,7.8,Alive with disease,cN2
+PSCC-321,Partial penectomy,Grade 1,Usual,Yes,No,No,Corpus cavernosum,12,5,68,Yes,No,Yes,Yes,Yes,T3,No,NA,NA,NA,8.2,Alive with disease,cN2
+PSCC-322,Total penectomy,Grade 3,Usual,Yes,Yes,Yes,Corpus cavernosum,7,10.5,64,Yes,Yes,No,Yes,Yes,T2,Yes,Yes,No,No,22.9,Died of cancer,cN1
+PSCC-323,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,6,NA,29,No,No,Yes,Yes,No,T3,Yes,No,Yes,Yes,11.5,Died of cancer,cN1
+PSCC-324,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,10,8.3,42,Yes,Yes,Yes,No,No,T3,No,NA,NA,NA,75,Alive without disease,cN2
+PSCC-325,Total penectomy,Grade 2,Usual,Yes,Yes,Yes,Corpus spongiosum,7,6,80,No,No,NA,No,No,NA,No,NA,NA,NA,148.7,Alive without disease,cN1
+PSCC-326,Partial penectomy,Grade 2,Usual,NA,NA,NA,Preputial dartos,8,NA,80,No,No,No,No,No,T2,No,NA,NA,NA,26.4,Died of other causes,cN0
+PSCC-327,Total penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,12,NA,71,Yes,Yes,No,Yes,Yes,T2,No,NA,NA,NA,5,Died of other causes,cN2
+PSCC-328,Circumcision,Grade 2,Usual,Yes,No,No,Preputial dartos,4,NA,69,No,No,NA,No,No,NA,No,NA,NA,NA,61.9,Alive without disease,cN0
+PSCC-329,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus cavernosum,7,NA,36,No,No,Yes,Yes,No,T3,No,NA,NA,NA,24.1,Alive without disease,cN0
+PSCC-330,Total penectomy,Grade 2,Usual,Yes,No,No,Corpus cavernosum,NA,NA,55,Yes,Yes,Yes,Yes,No,T3,Yes,Yes,Yes,No,5.9,Died of cancer,cN2
+PSCC-331,Partial penectomy,Grade 3,Usual,Yes,No,No,Corpus spongiosum,6,NA,82,Yes,No,No,No,Yes,T2,NA,NA,NA,NA,15.2,Died of cancer,cN0
+PSCC-332,Partial penectomy,Grade 1,Verrucous,Yes,No,No,Corpus spongiosum,3,NA,50,No,No,No,No,No,T2,No,NA,NA,NA,169.2,Lost at follow-up,cN0
+PSCC-333,Partial penectomy,Grade 3,Usual,NA,NA,NA,Preputial dartos,6,NA,49,Yes,Yes,No,No,No,NA,Yes,No,Yes,No,41.8,Alive without disease,cN1
