@@ -1,0 +1,949 @@
+## Risk Groups in Penile Cancer
+
+### Aim of the study
+The aim of this study is to evaluate the accuracy of previously published risk groups systems for predicting inguinal nodal metastases in patients with penile carcinoma. Cases of invasive penile squamous cell carcinomas were stratified using the following systems: Solsona _et al_ ([J Urol 2001;165:1506](http://www.ncbi.nlm.nih.gov/pubmed/11342906)), Hungerhuber _et al_ ([Urology 2006;68:621](http://www.ncbi.nlm.nih.gov/pubmed/16979733)), and the proposed by the European Association of Urology ([Eur Urol 2004;46:1](http://www.ncbi.nlm.nih.gov/pubmed/15183542)), with low, intermediate, and high risk categories in each one of them. Metastatic rates and cancer-specific survival rates in our dataset were compared with previously reported results. Receiver-operator characteristic (ROC) curves were generated to compare accuracy in predicting final nodal status. We found that these stratification systems may be useful for patients with low-grade superficial tumors and less accurate for evaluating patients with high-grade locally-advanced penile carcinomas. The results of this study may be useful for therapeutic planning of patients with penile squamous cell carcinomas.
+
+### Description of the repository
+This repository contains the full statistical analysis of the dataset that was used for the article _"Risk Groups Systems for Penile Cancer Management: A Study of 203 Patients with Invasive Squamous Cell Carcinoma"_. The article is currently under consideration for publication. This repository also contains the following files:
+
+* The final PDF version of the [article](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/Penis_RiskGroups.pdf) as well as the intermediate [Sweave](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/Penis_RiskGroups.Rnw) and [Latex](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/Penis_RiskGroups.tex) files used for the article
+* The [BibTeX](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/References.bib) file containing all the references cited in the article
+* The [R script](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/RiskGroups.R) that was used for analyzing the dataset and write the article, as well as the R scripts containing the [functions](https://github.com/alcideschaux/Penis-RiskGroups/tree/master/RFUN) written for plotting figures and tables
+* The [R Markdown](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/README.Rmd) file used for this report
+* The [figures](https://github.com/alcideschaux/Penis-RiskGroups/tree/master/figure) included in this repository in PNG format
+
+Data were analyzed using [R](http://www.r-project.org) version 3.1.1 “Sock it to Me” (R Foundation for Statistical Computing, Vienna, Austria). Results were written using RMarkDown in [RStudio](http://www.rstudio.com) version 0.98.1102 and the [knitr](http://cran.r-project.org/web/packages/knitr/index.html) package version 1.9 by [Yihui Xie](http://yihui.name/knitr).
+
+### Building the dataset for analysis
+First we loaded the full dataset including 333 patiens with invasive penile squamous cell carcinoma.
+
+```{r DataSet}
+Data <- read.csv("Article/PenisSCC_333.csv")
+```
+
+The full dataset is available at http://dx.doi.org/10.6084/m9.figshare.1290997, which also contains the dataset's codebook. From the 333 patients we selected only those with total/partial penectomy in `Procedure`, excluded cases with missing values in the variables of `Grade`, `pT` and `cN`, and excluded patients who were lost at follow up in `Outcome`.
+
+```{r CaseSelection}
+Data <- subset(Data, Procedure == "Total penectomy" | Procedure == "Partial penectomy")
+Data <- Data[complete.cases(Data$Grade), ]
+Data <- Data[complete.cases(Data$pT), ]
+Data <- Data[complete.cases(Data$cN), ]
+Data <- subset(Data, Outcome != "Lost at follow-up")
+Data <- droplevels(Data)
+```
+
+We then recoded 3 variables, creating new variables for cN positivity (`cN_Positive`), cancer-related death (`DOD`), and final nodal status (`Final_Nodal`). Positive cases for `Final_Nodal`where those with lymph node metastasis in the groin dissection, local relapse during follow-up, or unfavorable outcome, including alive with disease and death by cancer.
+
+```{r RecodeVariables}
+Data$cN_Positive <- ifelse(Data$cN == "cN0", c("No"), c("Yes"))
+Data$cN_Positive <- as.factor(Data$cN_Positive)
+Data$DOD <- ifelse(Data$Outcome == "Died of cancer", c("Yes"), c("No"))
+Data$DOD <- as.factor(Data$DOD)
+Data$Final_Nodal <- ifelse(Data$Mets == "Yes", c("Positive"), c("Negative"))
+Data$Final_Nodal[Data$Local == "Yes"] <- "Positive"
+Data$Final_Nodal[Data$Outcome == "Alive with disease"] <- "Positive"
+Data$Final_Nodal[Data$Outcome == "Died of cancer"] <- "Positive"
+Data$Final_Nodal <- as.factor(Data$Final_Nodal)
+```
+
+We finally created the risk groups for the Solsona _et al_, EUA, and Hungerhuber _et al_ systems, using the criteria provided in the reports.
+
+```{r RiskGroups}
+# SOLSONA risk groups
+Data$Solsona[Data$Grade == "Grade 1" & Data$pT == "T1"] <- "Low risk"
+Data$Solsona[Data$Grade == "Grade 2" & Data$pT == "T1"] <- "Intermediate risk"
+Data$Solsona[Data$Grade == "Grade 3" & Data$pT == "T1"] <- "Intermediate risk"
+Data$Solsona[Data$Grade == "Grade 1" & Data$pT == "T2"] <- "Intermediate risk"
+Data$Solsona[Data$Grade == "Grade 1" & Data$pT == "T3"] <- "Intermediate risk"
+Data$Solsona[Data$Grade == "Grade 2" & Data$pT == "T2"] <- "High risk"
+Data$Solsona[Data$Grade == "Grade 3" & Data$pT == "T2"] <- "High risk"
+Data$Solsona[Data$Grade == "Grade 2" & Data$pT == "T3"] <- "High risk"
+Data$Solsona[Data$Grade == "Grade 3" & Data$pT == "T3"] <- "High risk"
+Data$Solsona <- factor(Data$Solsona, levels = c("Low risk", "Intermediate risk", "High risk"), ordered = TRUE)
+# EAU risk groups
+Data$EAU[Data$Grade == "Grade 1" & Data$pT == "T1"] <- "Low risk"
+Data$EAU[Data$Grade == "Grade 2" & Data$pT == "T1"] <- "Intermediate risk"
+Data$EAU[Data$Grade == "Grade 3" & Data$pT == "T1"] <- "High risk"
+Data$EAU[Data$pT == "T2"] <- "High risk"
+Data$EAU[Data$pT == "T3"] <- "High risk"
+Data$EAU <- factor(Data$EAU, levels = c("Low risk", "Intermediate risk", "High risk"), ordered = TRUE)
+# HUNGERHUBER risk groups
+Data$Hungerhuber[Data$Grade == "Grade 1" & Data$pT == "T1"] <- "Low risk"
+Data$Hungerhuber[Data$Grade == "Grade 2" & Data$pT == "T1"] <- "Low risk"
+Data$Hungerhuber[Data$Grade == "Grade 1" & Data$pT == "T2"] <- "Intermediate risk"
+Data$Hungerhuber[Data$Grade == "Grade 1" & Data$pT == "T3"] <- "Intermediate risk"
+Data$Hungerhuber[Data$Grade == "Grade 2" & Data$pT == "T2"] <- "Intermediate risk"
+Data$Hungerhuber[Data$Grade == "Grade 2" & Data$pT == "T3"] <- "Intermediate risk"
+Data$Hungerhuber[Data$Grade == "Grade 3"] <- "High risk"
+Data$Hungerhuber <- factor(Data$Hungerhuber, levels = c("Low risk", "Intermediate risk", "High risk"), ordered = TRUE)
+
+```
+
+Data analysis was carried out on this dataset, using the functions defined in the following script.
+```{r RFUN}
+source("RFUN/NicePlots.R")
+source("RFUN/NiceTables.R")
+```
+
+### Methodology
+Data analysis is divided in 4 sections, as it follows:
+
+__<a href="#Descriptive">Descriptive Statistics.</a>__ All the variables included in the dataset were analyzed using bar plots, histograms, box plots, and one-way tables. Factor variables were described using absolute and relative percentages. Numeric variables were described using mean, standard deviation, median, interquartile range, minimum and maximum value.
+
+__Inferential Statistics:__ Statistical tests (Fisher's exact test for categorical variables, Kruskal-Wallis test for numerical variables) were used to evaluate the association between __<a href="#InferentialFNS">Final Nodal Status</a>__ and __<a href="#InferentialDOD">Cancer-Related Death</a>__ as predictors and all the variables included in the dataset. A 2-tailed P value was reported in all instances. Reported statistics included absolute and relative percentages for categorical variables by final nodal status and mean, standard deviation, median, interquartile range, minimum and maximum value by final nodal status.
+
+__Survival Analysis.__ For all variables in the dataset survival curves by __<a href="#SurvivalFNS">Final Nodal Status</a>__ and by __<a href="#SurvivalDOD">Cancer-Related Death</a>__ were built using the Kaplan-Meier method and compared using the Mantel-Cox (log-rank) test. Numerical variables were splitted in 2 levels using the median as the cutoff point. A 2-tailed P value was reported in all instances. 
+
+__Receiver-Operator Characteristic (ROC) Curve Analysis.__ ROC curves for predicting __<a href="#ROCFNS">Final Nodal Status</a>__ and __<a href="#ROCDOD">Cancer-Related Death</a>__ were plotted for all risk groups systems. ROC curves were compared against the baseline using the Mann-Whitney U test. Reported statistics included the area under the ROC curve (AUC) with tis 95% confidence interval and the 2-tailed P value from the Mann-Whitney test.
+
+### <a name="Descriptive">Descriptive Statistics</a>
+Here it follows the description of all the variables included in the analyzed dataset.
+
+#### Surgical procedure for primary treatment
+```{r Procedure}
+Var <- Data$Procedure
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Histologic grade
+```{r Grade}
+Var <- Data$Grade
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Histologic subtype
+```{r Subtype}
+Var <- Data$Subtype
+plot.categorical(Var, align = "h", left =8)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Tumor located in glans
+```{r Glans}
+Var <- Data$Glans
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Tumor located in coronal sulcus
+```{r Sulcus}
+Var <- Data$Sulcus
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Tumor located in Foreskin
+```{r Foreskin}
+Var <- Data$Foreskin
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Anatomical level of maximum tumor invasion
+```{r Level}
+Var <- Data$Level
+plot.categorical(Var, align = "h", left = 9)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Tumor thickness in mm
+```{r Thickness}
+Var <- Data$Thickness
+plot.numerical(Var, label = "Tumor Thickness, mm")
+descriptive.numerical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Tumor size in cm
+```{r Size}
+Var <- Data$Size
+plot.numerical(Var, label = "Tumor Size, cm")
+descriptive.numerical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Patient's age in years
+```{r Age}
+Var <- Data$Age
+plot.numerical(Var, label = "Patient's Age, years")
+descriptive.numerical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Bilateral inguinal lymphadenectomy
+```{r Lymphadenectomy}
+Var <- Data$Lymphadenectomy
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Inguinal Lymph Node Metastasis
+```{r Mets}
+Var <- Data$Mets
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Tumor invasion of penile urethra
+```{r Urethra}
+Var <- Data$Urethra
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Vascular invasion in primary tumor
+```{r Vascular}
+Var <- Data$Vascular
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Perineural invasion in primary tumor
+```{r Perineural}
+Var <- Data$Perineural
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Pathological T stage
+```{r pT}
+Var <- Data$pT
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Any tumor relapse (local, regional or systemic)
+```{r Relapse}
+Var <- Data$Relapse
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Local tumor relapse
+```{r Local}
+Var <- Data$Local
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Regional tumor relapse
+```{r Regional}
+Var <- Data$Regional
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Systemic tumor relapse
+```{r Systemic}
+Var <- Data$Systemic
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Follow-up length in months
+```{r FollowUp}
+Var <- Data$FollowUp
+plot.numerical(Var, label = "Follow-Up, Months")
+descriptive.numerical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Patient's outcome
+```{r Outcome}
+Var <- Data$Outcome
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Clinical N stage
+```{r cN}
+Var <- Data$cN
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Clinically positive inguinal lymph nodes
+```{r cN_Positive}
+Var <- Data$cN_Positive
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Final nodal status
+```{r Final_Nodal}
+Var <- Data$Final_Nodal
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Cancer-related death
+```{r DOD}
+Var <- Data$DOD
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Solsona _et al_ risk groups
+```{r Solsona}
+Var <- Data$Solsona
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### European Association of Urology risk groups
+```{r EAU}
+Var <- Data$EAU
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+#### Hungerhuber _et al_ risk groups
+```{r Hungerhuber}
+Var <- Data$Hungerhuber
+plot.categorical(Var)
+descriptive.categorical(Var)
+```
+
+_Number of missing cases: `r sum(is.na(Var))` cases._
+
+***
+
+### <a name="InferentialFNS">Inferential Statistics: Final Nodal Status</a>
+```{r FN_Var}
+Var2 <- Data$Final_Nodal
+```
+
+#### Final nodal status and surgical procedure
+```{r FN_Procedure}
+Var1 <- Data$Procedure
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and histologic grade
+```{r FN_Grade}
+Var1 <- Data$Grade
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and glans location
+```{r FN_Glans}
+Var1 <- Data$Glans
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and coronal sulcus location
+```{r FN_Sulcus}
+Var1 <- Data$Sulcus
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and foreskin location
+```{r FN_Foreskin}
+Var1 <- Data$Glans
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and anatomical level
+```{r FN_Level}
+Var1 <- Data$Level
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and tumor thickness
+```{r FN_Thickness}
+Var1 <- Data$Thickness
+boxplot.kruskal(Var1, Var2)
+descriptive.numerical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and tumor size
+```{r FN_Size}
+Var1 <- Data$Size
+boxplot.kruskal(Var1, Var2)
+descriptive.numerical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and patient's age
+```{r FN_Age}
+Var1 <- Data$Age
+boxplot.kruskal(Var1, Var2)
+descriptive.numerical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and urethral invasion
+```{r FN_Urethra}
+Var1 <- Data$Urethra
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and vascular invasion
+```{r FN_Vascular}
+Var1 <- Data$Vascular
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and perineural invasion
+```{r FN_Perineural}
+Var1 <- Data$Perineural
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and clinical N stage
+```{r FN_cN}
+Var1 <- Data$cN
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and pathological T stage
+```{r FN_pT}
+Var1 <- Data$pT
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and (any) tumor relapse
+```{r FN_Relapse}
+Var1 <- Data$Relapse
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and local relapse
+```{r FN_Local}
+Var1 <- Data$Local
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and regional relapse
+```{r FN_Regional}
+Var1 <- Data$Regional
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and systemic relapse
+```{r FN_Systemic}
+Var1 <- Data$Systemic
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and Solsona _et al_ risk groups
+```{r FN_Solsona}
+Var1 <- Data$Solsona
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and EAU risk groups
+```{r FN_EAU}
+Var1 <- Data$EAU
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Final nodal status and Hungerhuber _et al_ risk groups
+```{r FN_Hungerhuber}
+Var1 <- Data$Hungerhuber
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+### <a name="InferentialDOD">Inferential Statistics: Cancer-Related Death</a>
+```{r DOD_Var}
+Var2 <- Data$DOD
+```
+
+#### Cancer-related death and surgical procedure
+```{r DOD_Procedure}
+Var1 <- Data$Procedure
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and histologic grade
+```{r DOD_Grade}
+Var1 <- Data$Grade
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and glans location
+```{r DOD_Glans}
+Var1 <- Data$Glans
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and coronal sulcus location
+```{r DOD_Sulcus}
+Var1 <- Data$Sulcus
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and foreskin location
+```{r DOD_Foreskin}
+Var1 <- Data$Glans
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and anatomical level
+```{r DOD_Level}
+Var1 <- Data$Level
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and tumor thickness
+```{r DOD_Thickness}
+Var1 <- Data$Thickness
+boxplot.kruskal(Var1, Var2)
+descriptive.numerical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and tumor size
+```{r DOD_Size}
+Var1 <- Data$Size
+boxplot.kruskal(Var1, Var2)
+descriptive.numerical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and patient's age
+```{r DOD_Age}
+Var1 <- Data$Age
+boxplot.kruskal(Var1, Var2)
+descriptive.numerical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and urethral invasion
+```{r DOD_Urethra}
+Var1 <- Data$Urethra
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and vascular invasion
+```{r DOD_Vascular}
+Var1 <- Data$Vascular
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and perineural invasion
+```{r DOD_Perineural}
+Var1 <- Data$Perineural
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and clinical N stage
+```{r DOD_cN}
+Var1 <- Data$cN
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and pathological T stage
+```{r DOD_pT}
+Var1 <- Data$pT
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and (any) tumor relapse
+```{r DOD_Relapse}
+Var1 <- Data$Relapse
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and local relapse
+```{r DOD_Local}
+Var1 <- Data$Local
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and regional relapse
+```{r DOD_Regional}
+Var1 <- Data$Regional
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and systemic relapse
+```{r DOD_Systemic}
+Var1 <- Data$Systemic
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and Solsona _et al_ risk groups
+```{r DOD_Solsona}
+Var1 <- Data$Solsona
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and EAU risk groups
+```{r DOD_EAU}
+Var1 <- Data$EAU
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+#### Cancer-related death and Hungerhuber _et al_ risk groups
+```{r DOD_Hungerhuber}
+Var1 <- Data$Hungerhuber
+plot.categorical.group(Var1, Var2)
+descriptive.categorical.group(Var1, Var2)
+```
+
+***
+
+### <a name="SurvivalFNS">Survival Analysis: Final Nodal Status</a>
+```{r FN_Survival, fig.width = 9, fig.height = 7}
+# Defining outcome variable
+Status <- Data$Final_Nodal
+# Creating dicotomic variables from numerical variables for plotting
+Thickness_Median <- factor(ifelse(Data$Thickness > median(Data$Thickness, na.rm = TRUE), c("Above Median Thickness"), c("Below Median Thickness")))
+Age_Median <- factor(ifelse(Data$Age > median(Data$Age, na.rm = TRUE), c("Above Median Age"), c("Below Median Age")))
+# By surgical procedure
+with(Data, survival.plot(Procedure, FollowUp, Status, title = "Final Nodal Status by Surgical Procedure"))
+# By histologic grade
+with(Data, survival.plot(Grade, FollowUp, Status, title = "Final Nodal Status by Histologic Grade", position = "bottomright"))
+# By glans invasion
+with(Data, survival.plot(Glans, FollowUp, Status, title = "Final Nodal Status by Glans Invasion"))
+# By coronal sulcus invasion
+with(Data, survival.plot(Sulcus, FollowUp, Status, title = "Final Nodal Status by Coronal Sulcus Invasion"))
+# By foreskin invasion
+with(Data, survival.plot(Foreskin, FollowUp, Status, title = "Final Nodal Status by Foreskin Invasion"))
+# By anatomical level
+with(Data, survival.plot(Level, FollowUp, Status, title = "Final Nodal Status by Anatomical Level"))
+# By median tumor thickness
+with(Data, survival.plot(Thickness_Median, FollowUp, Status, title = "Final Nodal Status by Median Tumor Thickness"))
+# By median patient's age
+with(Data, survival.plot(Age_Median, FollowUp, Status, title = "Final Nodal Status by Median Patient's Age"))
+# By urethral invasion
+with(Data, survival.plot(Urethra, FollowUp, Status, title = "Final Nodal Status by Urethral Invasion"))
+# By vascular invasion
+with(Data, survival.plot(Vascular, FollowUp, Status, title = "Final Nodal Status by Vascular Invasion"))
+# By perineural invasion
+with(Data, survival.plot(Perineural, FollowUp, Status, title = "Final Nodal Status by Perineural Invasion"))
+# By pathological T stage
+with(Data, survival.plot(pT, FollowUp, Status, title = "Final Nodal Status by Pathological T Stage"))
+# By clinical N stage positivity
+with(Data, survival.plot(cN_Positive, FollowUp, Status, title = "Final Nodal Status by Clinical N Stage Positivity"))
+# By Solsona et al risk groups
+with(Data, survival.plot(Solsona, FollowUp, Status, title = "Final Nodal Status by Solsona et al Risk Groups", position = "bottomright"))
+# By EAU risk groups
+with(Data, survival.plot(EAU, FollowUp, Status, title = "Final Nodal Status by EAU Risk Groups"))
+# By Hungerhuber et al risk groups
+with(Data, survival.plot(Hungerhuber, FollowUp, Status, title = "Final Nodal Status by Hungerhuber et al Risk Groups"))
+```
+
+### <a name="SurvivalDOD">Survival Analysis: Cancer-Related Death</a>
+```{r DOD_Survival, fig.width = 9, fig.height = 7}
+# Defining outcome variable
+Status <- Data$DOD
+# By surgical procedure
+with(Data, survival.plot(Procedure, FollowUp, Status, title = "Cancer-Related Death by Surgical Procedure", position = "bottomright", ylim = c(0.5, 1)))
+# By histologic grade
+with(Data, survival.plot(Grade, FollowUp, Status, title = "Cancer-Related Death by Histologic Grade", position = "bottomright", ylim = c(0.5, 1)))
+# By glans invasion
+with(Data, survival.plot(Glans, FollowUp, Status, title = "Cancer-Related Death by Glans Invasion", ylim = c(0.5, 1)))
+# By coronal sulcus invasion
+with(Data, survival.plot(Sulcus, FollowUp, Status, title = "Cancer-Related Death by Coronal Sulcus Invasion", ylim = c(0.5, 1)))
+# By foreskin invasion
+with(Data, survival.plot(Foreskin, FollowUp, Status, title = "Cancer-Related Death by Foreskin Invasion", ylim = c(0.5, 1)))
+# By anatomical level
+with(Data, survival.plot(Level, FollowUp, Status, title = "Cancer-Related Death by Anatomical Level", position = "bottomright", ylim = c(0.5, 1)))
+# By median tumor thickness
+with(Data, survival.plot(Thickness_Median, FollowUp, Status, title = "Cancer-Related Death by Median Tumor Thickness", ylim = c(0.5, 1)))
+# By median patient's age
+with(Data, survival.plot(Age_Median, FollowUp, Status, title = "Cancer-Related Death by Median Patient's Age", ylim = c(0.5, 1)))
+# By urethral invasion
+with(Data, survival.plot(Urethra, FollowUp, Status, title = "Cancer-Related Death by Urethral Invasion", ylim = c(0.5, 1)))
+# By vascular invasion
+with(Data, survival.plot(Vascular, FollowUp, Status, title = "Cancer-Related Death by Vascular Invasion", ylim = c(0.5, 1)))
+# By perineural invasion
+with(Data, survival.plot(Perineural, FollowUp, Status, title = "Cancer-Related Death by Perineural Invasion", ylim = c(0.5, 1)))
+# By pathological T stage
+with(Data, survival.plot(pT, FollowUp, Status, title = "Cancer-Related Death by Pathological T Stage", ylim = c(0.5, 1)))
+# By tumor relapse
+with(Data, survival.plot(Relapse, FollowUp, Status, title = "Cancer-Related Death by Tumor Relapse", position = "bottomright"))
+# By local tumor relapse
+with(Data, survival.plot(Local, FollowUp, Status, title = "Cancer-Related Death by Local Tumor Relapse"))
+# By regional tumor relapse
+with(Data, survival.plot(Regional, FollowUp, Status, title = "Cancer-Related Death by Regional Tumor Relapse"))
+# By systemic tumor relapse
+with(Data, survival.plot(Systemic, FollowUp, Status, title = "Cancer-Related Death by Systemic Tumor Relapse"))
+# By clinical N stage positivity
+with(Data, survival.plot(cN_Positive, FollowUp, Status, title = "Cancer-Related Death by Clinical N Stage Positivity", ylim = c(0.5, 1)))
+# By Solsona et al risk groups
+with(Data, survival.plot(Solsona, FollowUp, Status, title = "Cancer-Related Death by Solsona et al Risk Groups", position = "bottomright", ylim = c(0.5, 1)))
+# By EAU risk groups
+with(Data, survival.plot(EAU, FollowUp, Status, title = "Cancer-Related Death by EAU Risk Groups", ylim = c(0.5, 1)))
+# By Hungerhuber et al risk groups
+with(Data, survival.plot(Hungerhuber, FollowUp, Status, title = "Cancer-Related Death by Hungerhuber et al Risk Groups", ylim = c(0.5, 1)))
+
+```
+
+### <a name="ROCFNS">ROC Curve Analysis: Final Nodal Status</a>
+```{r FN_ROC, fig.width = 9, fig.height = 7}
+library(pROC)
+# Plots
+par(cex = 1.25)
+FN_ROC_Solsona <- with(Data, plot.roc(Final_Nodal, Solsona,  main = "Final Nodal Status", lty = 4, col = 4))
+FN_ROC_EAU <- with(Data, lines.roc(Final_Nodal, EAU, lty = 2, col = 1))
+FN_ROC_Hungerhuber <- with(Data, lines.roc(Final_Nodal, Hungerhuber, lty = 6, col = 2))
+legend("bottomright", lty = c(4,2,6), col = c(4,1,2), bty = "n",
+       legend = c("Solsona et al system", "EAU system", "Hungerhuber et al system"))
+# Statistics
+ROC_FN_Solsona <- round(with(Data, roc(Final_Nodal ~ Solsona, ci = TRUE)$ci), 2)
+MW_FN_Solsona <- format(with(Data, wilcox.test(as.numeric(Solsona) ~ Final_Nodal)$p.value), digits = 2)
+ROC_FN_EAU <- round(with(Data, roc(Final_Nodal ~ EAU, ci = TRUE)$ci), 2)
+MW_FN_EAU <- format(with(Data, wilcox.test(as.numeric(EAU) ~ Final_Nodal)$p.value), digits = 2)
+ROC_FN_Hungerhuber <- round(with(Data, roc(Final_Nodal ~ Hungerhuber, ci = TRUE)$ci), 2)
+MW_FN_Hungerhuber <- format(with(Data, wilcox.test(as.numeric(Hungerhuber) ~ Final_Nodal)$p.value), digits = 2)
+```
+
+
+Risk Group System | Area Under the ROC Curve | 95% CI | Mann-Whitney's P value 
+--- | :---: | :---: | :---:
+Solsona _et al_ system | `r ROC_FN_Solsona[2]` | `r ROC_FN_Solsona[1]`, `r ROC_FN_Solsona[3]` | `r MW_FN_Solsona`
+EAU system | `r ROC_FN_EAU[2]` | `r ROC_FN_EAU[1]`, `r ROC_FN_EAU[3]` | `r MW_FN_EAU`
+Hungerhuber _et al_ system | `r ROC_FN_Hungerhuber[2]` | `r ROC_FN_Hungerhuber[1]`, `r ROC_FN_Hungerhuber[3]` | `r MW_FN_Hungerhuber`
+
+***
+
+### <a name="ROCDOD">ROC Curve Analysis: Cancer-Related Death</a>
+```{r DOD_ROC, fig.width = 9, fig.height = 7}
+# Plots
+par(cex = 1.25)
+FN_ROC_Solsona <- with(Data, plot.roc(DOD, Solsona,  main = "Cancer-Related Death", lty = 4, col = 4))
+FN_ROC_EAU <- with(Data, lines.roc(DOD, EAU, lty = 2, col = 1))
+FN_ROC_Hungerhuber <- with(Data, lines.roc(DOD, Hungerhuber, lty = 6, col = 2))
+legend("bottomright", lty = c(4,2,6), col = c(4,1,2), bty = "n",
+       legend = c("Solsona et al system", "EAU system", "Hungerhuber et al system"))
+# Statistics
+ROC_DOD_Solsona <- round(with(Data, roc(DOD ~ Solsona, ci = TRUE)$ci), 2)
+MW_DOD_Solsona <- format(with(Data, wilcox.test(as.numeric(Solsona) ~ DOD)$p.value), digits = 2)
+ROC_DOD_EAU <- round(with(Data, roc(DOD ~ EAU, ci = TRUE)$ci), 2)
+MW_DOD_EAU <- format(with(Data, wilcox.test(as.numeric(EAU) ~ DOD)$p.value), digits = 2)
+ROC_DOD_Hungerhuber <- round(with(Data, roc(DOD ~ Hungerhuber, ci = TRUE)$ci), 2)
+MW_DOD_Hungerhuber <- format(with(Data, wilcox.test(as.numeric(Hungerhuber) ~ DOD)$p.value), digits = 2)
+```
+
+Risk Group System | Area Under the ROC Curve | 95% CI | Mann-Whitney's P value 
+--- | :---: | :---: | :---:
+Solsona _et al_ system | `r ROC_DOD_Solsona[2]` | `r ROC_DOD_Solsona[1]`, `r ROC_DOD_Solsona[3]` | `r MW_DOD_Solsona`
+EAU system | `r ROC_DOD_EAU[2]` | `r ROC_DOD_EAU[1]`, `r ROC_DOD_EAU[3]` | `r MW_DOD_EAU`
+Hungerhuber _et al_ system | `r ROC_DOD_Hungerhuber[2]` | `r ROC_DOD_Hungerhuber[1]`, `r ROC_DOD_Hungerhuber[3]` | `r MW_DOD_Hungerhuber`
+
+***
