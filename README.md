@@ -4,9 +4,9 @@
 The aim of this study is to evaluate the accuracy of previously published risk groups systems for predicting inguinal nodal metastases in patients with penile carcinoma. Cases of invasive penile squamous cell carcinomas were stratified using the following systems: Solsona _et al_ ([J Urol 2001;165:1506](http://www.ncbi.nlm.nih.gov/pubmed/11342906)), Hungerhuber _et al_ ([Urology 2006;68:621](http://www.ncbi.nlm.nih.gov/pubmed/16979733)), and the proposed by the European Association of Urology ([Eur Urol 2004;46:1](http://www.ncbi.nlm.nih.gov/pubmed/15183542)), with low, intermediate, and high risk categories in each one of them. Metastatic rates and cancer-specific survival rates in our dataset were compared with previously reported results. Receiver-operator characteristic (ROC) analysis was carried out to compare accuracy in predicting final nodal status. We found that these risk groups systems may be useful for patients with low-grade superficial tumors and less accurate for evaluating patients with high-grade locally-advanced penile carcinomas. The results of this study may be useful for therapeutic planning of patients with penile squamous cell carcinomas.
 
 ### Description of the repository
-This repository contains the full statistical analysis of the dataset that was used for the article _"Risk Groups Systems for Penile Cancer Management: A Study of 203 Patients with Invasive Squamous Cell Carcinoma"_. The article is currently under consideration of publication. This repository also contains the following files:
+This repository contains the full statistical analysis of the dataset that was used for the article _"Risk Groups Systems for Penile Cancer Management: A Study of 203 Patients with Invasive Squamous Cell Carcinoma"_. The article has been accepted for publication in [Urology](http://www.goldjournal.net). This repository also contains the following files:
 
-* The final PDF version of the [article](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/Penis_RiskGroups.pdf), as submitted for consideration of publication
+* The final (approved) PDF version of the [article](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/Penis_RiskGroups.pdf), as submitted for publication
 * The [BibTeX](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/References.bib) file containing all the references cited in the article
 * The [R script](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/Article/RiskGroups.R) that was used for analyzing the dataset and write the article, as well as the R scripts containing the [functions](https://github.com/alcideschaux/Penis-RiskGroups/tree/master/RFUN) written for plotting figures and tables
 * The [R Markdown](https://github.com/alcideschaux/Penis-RiskGroups/blob/master/README.Rmd) file used for this report
@@ -82,19 +82,10 @@ Data$Hungerhuber[Data$Grade == "Grade 3"] <- "High risk"
 Data$Hungerhuber <- factor(Data$Hungerhuber, levels = c("Low risk", "Intermediate risk", "High risk"), ordered = TRUE)
 ```
 
-Data analysis was carried out on this dataset, using the functions defined in the following script.
+Data analysis was carried out on this dataset, using the [simpleR](https://github.com/alcideschaux/simpleR) package.
 
 ```r
-source("RFUN/NicePlots.R")
-```
-
-```
-## Loading required package: survival
-## Loading required package: splines
-```
-
-```r
-source("RFUN/NiceTables.R")
+library(simpleR)
 ```
 
 ### Methodology
@@ -115,7 +106,7 @@ Here it follows the description of all the variables included in the analyzed da
 
 ```r
 Var <- Data$Procedure
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Procedure](figure/Procedure-1.png) 
@@ -139,7 +130,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Grade
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Grade](figure/Grade-1.png) 
@@ -164,7 +155,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Subtype
-plot.categorical(Var, align = "h", left =8)
+categorical.plot(Var, align = "h", left =8)
 ```
 
 ![plot of chunk Subtype](figure/Subtype-1.png) 
@@ -194,7 +185,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Glans
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Glans](figure/Glans-1.png) 
@@ -218,7 +209,7 @@ _Number of missing cases: 3 cases._
 
 ```r
 Var <- Data$Sulcus
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Sulcus](figure/Sulcus-1.png) 
@@ -242,7 +233,7 @@ _Number of missing cases: 3 cases._
 
 ```r
 Var <- Data$Foreskin
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Foreskin](figure/Foreskin-1.png) 
@@ -266,7 +257,7 @@ _Number of missing cases: 3 cases._
 
 ```r
 Var <- Data$Level
-plot.categorical(Var, align = "h", left = 9)
+categorical.plot(Var, align = "h", left = 9)
 ```
 
 ![plot of chunk Level](figure/Level-1.png) 
@@ -292,7 +283,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Thickness
-plot.numerical(Var, label = "Tumor Thickness, mm")
+numerical.plot(Var, label = "Tumor Thickness, mm")
 ```
 
 ![plot of chunk Thickness](figure/Thickness-1.png) ![plot of chunk Thickness](figure/Thickness-2.png) 
@@ -320,7 +311,7 @@ _Number of missing cases: 11 cases._
 
 ```r
 Var <- Data$Size
-plot.numerical(Var, label = "Tumor Size, cm")
+numerical.plot(Var, label = "Tumor Size, cm")
 ```
 
 ![plot of chunk Size](figure/Size-1.png) ![plot of chunk Size](figure/Size-2.png) 
@@ -348,7 +339,7 @@ _Number of missing cases: 91 cases._
 
 ```r
 Var <- Data$Age
-plot.numerical(Var, label = "Patient's Age, years")
+numerical.plot(Var, label = "Patient's Age, years")
 ```
 
 ![plot of chunk Age](figure/Age-1.png) ![plot of chunk Age](figure/Age-2.png) 
@@ -376,7 +367,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Lymphadenectomy
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Lymphadenectomy](figure/Lymphadenectomy-1.png) 
@@ -400,7 +391,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Mets
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Mets](figure/Mets-1.png) 
@@ -424,7 +415,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Urethra
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Urethra](figure/Urethra-1.png) 
@@ -448,7 +439,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Vascular
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Vascular](figure/Vascular-1.png) 
@@ -472,7 +463,7 @@ _Number of missing cases: 7 cases._
 
 ```r
 Var <- Data$Perineural
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Perineural](figure/Perineural-1.png) 
@@ -496,7 +487,7 @@ _Number of missing cases: 6 cases._
 
 ```r
 Var <- Data$pT
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk pT](figure/pT-1.png) 
@@ -521,7 +512,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Relapse
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Relapse](figure/Relapse-1.png) 
@@ -545,7 +536,7 @@ _Number of missing cases: 8 cases._
 
 ```r
 Var <- Data$Local
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Local](figure/Local-1.png) 
@@ -569,7 +560,7 @@ _Number of missing cases: 158 cases._
 
 ```r
 Var <- Data$Regional
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Regional](figure/Regional-1.png) 
@@ -593,7 +584,7 @@ _Number of missing cases: 158 cases._
 
 ```r
 Var <- Data$Systemic
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Systemic](figure/Systemic-1.png) 
@@ -617,7 +608,7 @@ _Number of missing cases: 158 cases._
 
 ```r
 Var <- Data$FollowUp
-plot.numerical(Var, label = "Follow-Up, Months")
+numerical.plot(Var, label = "Follow-Up, Months")
 ```
 
 ![plot of chunk FollowUp](figure/FollowUp-1.png) ![plot of chunk FollowUp](figure/FollowUp-2.png) 
@@ -645,7 +636,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Outcome
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Outcome](figure/Outcome-1.png) 
@@ -671,7 +662,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$cN
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk cN](figure/cN-1.png) 
@@ -697,7 +688,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$cN_Positive
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk cN_Positive](figure/cN_Positive-1.png) 
@@ -721,7 +712,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Final_Nodal
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Final_Nodal](figure/Final_Nodal-1.png) 
@@ -745,7 +736,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$DOD
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk DOD](figure/DOD-1.png) 
@@ -769,7 +760,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Solsona
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Solsona](figure/Solsona-1.png) 
@@ -794,7 +785,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$EAU
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk EAU](figure/EAU-1.png) 
@@ -819,7 +810,7 @@ _Number of missing cases: 0 cases._
 
 ```r
 Var <- Data$Hungerhuber
-plot.categorical(Var)
+categorical.plot(Var)
 ```
 
 ![plot of chunk Hungerhuber](figure/Hungerhuber-1.png) 
@@ -850,7 +841,7 @@ Var2 <- Data$Final_Nodal
 
 ```r
 Var1 <- Data$Procedure
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Procedure](figure/FN_Procedure-1.png) 
@@ -872,7 +863,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Grade
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Grade](figure/FN_Grade-1.png) 
@@ -895,7 +886,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Glans
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Glans](figure/FN_Glans-1.png) 
@@ -917,7 +908,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Sulcus
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Sulcus](figure/FN_Sulcus-1.png) 
@@ -939,7 +930,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Glans
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Foreskin](figure/FN_Foreskin-1.png) 
@@ -961,7 +952,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Level
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Level](figure/FN_Level-1.png) 
@@ -985,7 +976,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Thickness
-boxplot.kruskal(Var1, Var2)
+numerical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Thickness](figure/FN_Thickness-1.png) 
@@ -1011,7 +1002,7 @@ descriptive.numerical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Size
-boxplot.kruskal(Var1, Var2)
+numerical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Size](figure/FN_Size-1.png) 
@@ -1037,7 +1028,7 @@ descriptive.numerical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Age
-boxplot.kruskal(Var1, Var2)
+numerical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Age](figure/FN_Age-1.png) 
@@ -1063,7 +1054,7 @@ descriptive.numerical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Urethra
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Urethra](figure/FN_Urethra-1.png) 
@@ -1085,7 +1076,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Vascular
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Vascular](figure/FN_Vascular-1.png) 
@@ -1107,7 +1098,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Perineural
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Perineural](figure/FN_Perineural-1.png) 
@@ -1129,7 +1120,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$cN
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_cN](figure/FN_cN-1.png) 
@@ -1153,7 +1144,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$pT
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_pT](figure/FN_pT-1.png) 
@@ -1176,7 +1167,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Relapse
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Relapse](figure/FN_Relapse-1.png) 
@@ -1198,7 +1189,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Local
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Local](figure/FN_Local-1.png) 
@@ -1220,7 +1211,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Regional
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Regional](figure/FN_Regional-1.png) 
@@ -1242,7 +1233,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Systemic
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Systemic](figure/FN_Systemic-1.png) 
@@ -1264,7 +1255,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Solsona
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Solsona](figure/FN_Solsona-1.png) 
@@ -1287,7 +1278,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$EAU
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_EAU](figure/FN_EAU-1.png) 
@@ -1310,7 +1301,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Hungerhuber
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk FN_Hungerhuber](figure/FN_Hungerhuber-1.png) 
@@ -1339,7 +1330,7 @@ Var2 <- Data$DOD
 
 ```r
 Var1 <- Data$Procedure
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Procedure](figure/DOD_Procedure-1.png) 
@@ -1361,7 +1352,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Grade
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Grade](figure/DOD_Grade-1.png) 
@@ -1384,7 +1375,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Glans
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Glans](figure/DOD_Glans-1.png) 
@@ -1406,7 +1397,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Sulcus
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Sulcus](figure/DOD_Sulcus-1.png) 
@@ -1428,7 +1419,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Glans
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Foreskin](figure/DOD_Foreskin-1.png) 
@@ -1450,7 +1441,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Level
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Level](figure/DOD_Level-1.png) 
@@ -1474,7 +1465,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Thickness
-boxplot.kruskal(Var1, Var2)
+numerical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Thickness](figure/DOD_Thickness-1.png) 
@@ -1500,7 +1491,7 @@ descriptive.numerical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Size
-boxplot.kruskal(Var1, Var2)
+numerical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Size](figure/DOD_Size-1.png) 
@@ -1526,7 +1517,7 @@ descriptive.numerical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Age
-boxplot.kruskal(Var1, Var2)
+numerical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Age](figure/DOD_Age-1.png) 
@@ -1552,7 +1543,7 @@ descriptive.numerical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Urethra
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Urethra](figure/DOD_Urethra-1.png) 
@@ -1574,7 +1565,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Vascular
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Vascular](figure/DOD_Vascular-1.png) 
@@ -1596,7 +1587,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Perineural
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Perineural](figure/DOD_Perineural-1.png) 
@@ -1618,7 +1609,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$cN
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_cN](figure/DOD_cN-1.png) 
@@ -1642,7 +1633,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$pT
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_pT](figure/DOD_pT-1.png) 
@@ -1665,7 +1656,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Relapse
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Relapse](figure/DOD_Relapse-1.png) 
@@ -1687,7 +1678,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Local
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Local](figure/DOD_Local-1.png) 
@@ -1709,7 +1700,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Regional
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Regional](figure/DOD_Regional-1.png) 
@@ -1731,7 +1722,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Systemic
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Systemic](figure/DOD_Systemic-1.png) 
@@ -1753,7 +1744,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Solsona
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Solsona](figure/DOD_Solsona-1.png) 
@@ -1776,7 +1767,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$EAU
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_EAU](figure/DOD_EAU-1.png) 
@@ -1799,7 +1790,7 @@ descriptive.categorical.group(Var1, Var2)
 
 ```r
 Var1 <- Data$Hungerhuber
-plot.categorical.group(Var1, Var2)
+categorical.group.plot(Var1, Var2)
 ```
 
 ![plot of chunk DOD_Hungerhuber](figure/DOD_Hungerhuber-1.png) 
@@ -2085,19 +2076,6 @@ with(Data, survival.plot(Hungerhuber, FollowUp, Status, title = "Cancer-Related 
 
 ```r
 library(pROC)
-```
-
-```
-## Type 'citation("pROC")' for a citation.
-## 
-## Attaching package: 'pROC'
-## 
-## The following objects are masked from 'package:stats':
-## 
-##     cov, smooth, var
-```
-
-```r
 # Plots
 par(cex = 1.25)
 FN_ROC_Solsona <- with(Data, plot.roc(Final_Nodal, Solsona,  main = "Final Nodal Status", lty = 4, col = 4))
